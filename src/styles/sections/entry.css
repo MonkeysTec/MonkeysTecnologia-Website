@@ -1,0 +1,63 @@
+﻿.entry-section {
+  padding: 0 0 98px;
+}
+
+.entry-card {
+  display: flex;
+  min-height: 272px;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.entry-card span {
+  color: var(--orange);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.entry-card h3 {
+  margin-top: 28px;
+}
+
+.entry-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-top: auto;
+  color: var(--orange-soft);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-card {
+    transform: perspective(900px) rotateX(9deg) scale(0.98);
+  }
+
+  .service-card:hover {
+    border-color: rgba(255, 106, 0, 0.5);
+    box-shadow:
+      0 32px 68px rgba(255, 106, 0, 0.2),
+      0 16px 42px rgba(0, 0, 0, 0.38),
+      inset 0 -6px 14px rgba(255, 255, 255, 0.08);
+    transform: perspective(900px) rotateX(0deg) scale(1) translateY(-10px);
+  }
+
+  .service-card:hover::before {
+    opacity: 1;
+  }
+
+  .pain-card:hover {
+    transform: translateY(-6px);
+  }
+
+  .entry-card:hover {
+    border-color: rgba(255, 106, 0, 0.42);
+    box-shadow: 0 26px 58px rgba(255, 106, 0, 0.14);
+    transform: translateY(-6px);
+  }
+}
+

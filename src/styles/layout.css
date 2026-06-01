@@ -1,0 +1,42 @@
+﻿.site-shell {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow-x: hidden;
+  overflow-y: visible;
+  touch-action: pan-y;
+  padding-bottom: max(34px, env(safe-area-inset-bottom));
+  background:
+    radial-gradient(circle at 78% 10%, rgba(255, 102, 0, 0.22), transparent 34rem),
+    radial-gradient(circle at 12% 34%, rgba(255, 102, 0, 0.1), transparent 28rem),
+    linear-gradient(180deg, #050505 0%, #0b0b0c 48%, #11100f 100%);
+  color: var(--text);
+}
+
+.site-shell::before {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  content: '';
+  background-image:
+    linear-gradient(rgba(255, 102, 0, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 102, 0, 0.09) 1px, transparent 1px);
+  background-size: 84px 84px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.42), transparent 72%);
+}
+
+.topbar,
+.hero-section,
+.highlight-strip,
+.pain-section,
+.services-section,
+.entry-section,
+.process-section,
+.contact-section,
+.page-end-spacer {
+  position: relative;
+  z-index: 1;
+}
+

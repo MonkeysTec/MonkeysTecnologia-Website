@@ -1,0 +1,145 @@
+﻿.pain-section,
+.services-section,
+.entry-section,
+.process-section,
+.contact-section {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.pain-section {
+  padding: 98px 0 0;
+}
+
+.services-section {
+  padding: 110px 0 86px;
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(300px, 0.6fr);
+  align-items: end;
+  gap: 56px;
+  margin-bottom: 34px;
+}
+
+.compact-heading {
+  align-items: start;
+}
+
+.section-heading h2,
+.process-copy h2,
+.contact-section h2 {
+  margin-top: 14px;
+  font-size: clamp(2.3rem, 4.6vw, 4.5rem);
+}
+
+.section-heading p,
+.process-copy p,
+.contact-section p {
+  font-size: 1.04rem;
+}
+
+.pain-grid,
+.entry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.pain-card,
+.entry-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 106, 0, 0.07), transparent 58%),
+    rgba(255, 255, 255, 0.035);
+  transition:
+    border-color 220ms ease,
+    background 300ms ease,
+    box-shadow 340ms ease,
+    transform 360ms ease;
+}
+
+.pain-card {
+  min-height: 238px;
+  padding: 24px;
+}
+
+.pain-card::before,
+.entry-card::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: '';
+  background: linear-gradient(135deg, rgba(255, 106, 0, 0.14), transparent 44%);
+  opacity: 0.74;
+  transition: opacity 300ms ease;
+}
+
+.pain-card .card-icon,
+.pain-card h3,
+.pain-card p,
+.entry-card span,
+.entry-card h3,
+.entry-card p,
+.entry-card a {
+  position: relative;
+  z-index: 1;
+}
+
+.pain-card h3,
+.entry-card h3 {
+  margin: 18px 0 8px;
+  color: var(--text-strong);
+  font-size: 1.08rem;
+  line-height: 1.2;
+}
+
+.pain-card p,
+.entry-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.pain-card:hover,
+.pain-card:focus-within {
+  border-color: rgba(255, 106, 0, 0.42);
+  background:
+    radial-gradient(circle at 19% 16%, rgba(255, 106, 0, 0.18), transparent 34%),
+    linear-gradient(180deg, rgba(255, 106, 0, 0.1), transparent 62%),
+    rgba(255, 255, 255, 0.045);
+  box-shadow:
+    0 26px 58px rgba(0, 0, 0, 0.28),
+    0 0 34px rgba(255, 106, 0, 0.1);
+}
+
+.pain-card:hover::before,
+.pain-card:focus-within::before {
+  opacity: 1;
+}
+
+.pain-card:hover .card-icon,
+.pain-card:focus-within .card-icon {
+  border-color: rgba(255, 106, 0, 0.62);
+  background: rgba(255, 106, 0, 0.14);
+  box-shadow:
+    0 0 28px rgba(255, 106, 0, 0.34),
+    inset 0 0 22px rgba(255, 106, 0, 0.1);
+  animation: none;
+  transform: translateY(-3px) scale(1.06);
+}
+
+.pain-card:hover .card-icon::before,
+.pain-card:focus-within .card-icon::before {
+  animation: iconSweep 1500ms ease-in-out infinite;
+}
+
+.pain-card:hover .card-icon svg,
+.pain-card:focus-within .card-icon svg {
+  filter: drop-shadow(0 0 8px rgba(255, 106, 0, 0.64));
+  transform: scale(1.08);
+}
+

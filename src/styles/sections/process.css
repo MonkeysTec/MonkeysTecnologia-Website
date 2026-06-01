@@ -1,0 +1,37 @@
+﻿.process-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(340px, 0.72fr);
+  gap: 70px;
+  align-items: center;
+  padding: 30px 0 100px;
+}
+
+.process-list {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.process-list li {
+  display: grid;
+  grid-template-columns: 58px 1fr 28px;
+  align-items: center;
+  min-height: 72px;
+  padding: 0 20px;
+  border: 1px solid rgba(255, 106, 0, 0.22);
+  border-radius: 8px;
+  background: rgba(5, 5, 5, 0.72);
+}
+
+.process-list span {
+  color: var(--orange);
+  font-family: var(--mono);
+}
+
+.process-list strong {
+  color: var(--text-strong);
+  font-size: 1.12rem;
+}
+

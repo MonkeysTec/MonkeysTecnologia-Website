@@ -1,0 +1,58 @@
+﻿@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .service-preview span,
+  .service-preview strong,
+  .card-icon,
+  .card-icon::before,
+  .preview-automation i,
+  .service-card-automation .card-icon svg,
+  .service-card-automation .card-icon::after,
+  .service-card-automation .preview-automation i::after,
+  .service-card-automation .preview-automation span,
+  .service-card-automation .preview-automation span::after,
+  .service-card-web .preview-web span,
+  .service-card-web .preview-web strong,
+  .service-card-data .preview-data span,
+  .service-card-data .preview-data span::after,
+  .service-card-support .preview-support span,
+  .service-card-support .preview-support span::before,
+  .service-card-support .preview-support span::after {
+    animation: none;
+  }
+
+  .service-card {
+    transition: none;
+    transform: none;
+  }
+
+  .pain-card,
+  .entry-card {
+    transition: none;
+    transform: none;
+  }
+
+  .need-word-track span {
+    animation: none;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .need-word-track span:not(:first-child) {
+    display: none;
+  }
+
+  .hero-word-track span {
+    animation: none;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hero-word-track span:not(:first-child) {
+    display: none;
+  }
+}

@@ -1,0 +1,11 @@
+@import './styles/layout.css';
+@import './styles/sections/header.css';
+@import './styles/sections/hero.css';
+@import './styles/sections/highlights.css';
+@import './styles/sections/shared-sections.css';
+@import './styles/sections/services.css';
+@import './styles/sections/entry.css';
+@import './styles/motion.css';
+@import './styles/sections/process.css';
+@import './styles/sections/contact.css';
+@import './styles/responsive.css';
