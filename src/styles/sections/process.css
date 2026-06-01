@@ -6,6 +6,17 @@
   padding: 30px 0 100px;
 }
 
+.process-copy h2 {
+  max-width: 11.5ch;
+  font-size: clamp(2.6rem, 4.1vw, 4.05rem);
+  line-height: 1.08;
+}
+
+.process-copy p {
+  max-width: 760px;
+  margin-top: 18px;
+}
+
 .process-list {
   display: grid;
   gap: 12px;

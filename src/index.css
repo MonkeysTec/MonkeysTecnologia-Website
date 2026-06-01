@@ -31,6 +31,15 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+#inicio,
+#servicos,
+#antes-solucao,
+#caminhos,
+#processo,
+#contato {
+  scroll-margin-top: 104px;
+}
+
 body {
   width: 100%;
   max-width: 100%;
@@ -46,7 +55,7 @@ body {
 #root {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: visible;
   touch-action: pan-y;
 }
 

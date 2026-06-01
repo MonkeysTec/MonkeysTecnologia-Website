@@ -3,7 +3,7 @@ import { painPoints } from '../data/siteContent'
 
 export function PainSection() {
   return (
-    <section className="pain-section" aria-labelledby="pain-heading">
+    <section className="pain-section" id="antes-solucao" aria-labelledby="pain-heading">
       <div className="section-heading compact-heading">
         <div>
           <span className="section-kicker">
