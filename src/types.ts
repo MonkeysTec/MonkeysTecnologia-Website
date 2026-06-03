@@ -16,6 +16,7 @@ export type EntryPath = {
   title: string
   label: string
   text: string
+  whatsappMessage: string
 }
 
 export type ContactOption = {
@@ -23,4 +24,9 @@ export type ContactOption = {
   image?: string
   label: string
   href: string
+}
+
+export type ClientLogo = {
+  image: string
+  label: string
 }

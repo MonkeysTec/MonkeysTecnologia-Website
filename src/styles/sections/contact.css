@@ -153,33 +153,27 @@
 }
 
 .contact-menu[open] .contact-menu-items a:nth-child(1) {
-  --angle: -90deg;
-  --return-angle: 90deg;
+  --angle: -100deg;
+  --return-angle: 100deg;
   transition-delay: 20ms;
 }
 
 .contact-menu[open] .contact-menu-items a:nth-child(2) {
-  --angle: -18deg;
-  --return-angle: 18deg;
+  --angle: -20deg;
+  --return-angle: 20deg;
   transition-delay: 70ms;
 }
 
 .contact-menu[open] .contact-menu-items a:nth-child(3) {
-  --angle: 54deg;
-  --return-angle: -54deg;
+  --angle: 80deg;
+  --return-angle: -80deg;
   transition-delay: 120ms;
 }
 
 .contact-menu[open] .contact-menu-items a:nth-child(4) {
-  --angle: 126deg;
-  --return-angle: -126deg;
+  --angle: 180deg;
+  --return-angle: -180deg;
   transition-delay: 170ms;
-}
-
-.contact-menu[open] .contact-menu-items a:nth-child(5) {
-  --angle: 198deg;
-  --return-angle: -198deg;
-  transition-delay: 220ms;
 }
 
 .contact-menu-items a:hover,

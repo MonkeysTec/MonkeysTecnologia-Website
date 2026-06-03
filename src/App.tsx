@@ -1,4 +1,5 @@
 import { ContactSection } from './sections/ContactSection'
+import { ClientsSection } from './sections/ClientsSection'
 import { EntrySection } from './sections/EntrySection'
 import { Header } from './sections/Header'
 import { HeroSection } from './sections/HeroSection'
@@ -23,6 +24,7 @@ function App() {
       <ServicesSection />
       <EntrySection />
       <ProcessSection />
+      <ClientsSection />
       <ContactSection />
       <div className="page-end-spacer" aria-hidden="true" />
     </main>

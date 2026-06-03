@@ -1,6 +1,7 @@
 import { useEffect, useState, type MouseEvent } from 'react'
 import { ArrowRight } from 'lucide-react'
 import monkeyIniLogo from '../assets/monkey-ini.png'
+import { createWhatsAppLink } from '../data/siteContent'
 
 const navItems = [
   { href: '#antes-solucao', label: 'Antes da Solução' },
@@ -131,7 +132,12 @@ export function Header() {
         ))}
       </nav>
 
-      <a className="nav-cta" href="#contato" onClick={(event) => handleNavClick(event, '#contato')}>
+      <a
+        className="nav-cta"
+        href={createWhatsAppLink('Olá! Vim pelo site da Monkeys Tecnologia e quero conversar.')}
+        target="_blank"
+        rel="noreferrer"
+      >
         Conversar
         <ArrowRight size={18} strokeWidth={2.4} />
       </a>

@@ -9,11 +9,40 @@ import {
   ShieldCheck,
   UsersRound,
 } from 'lucide-react'
-import gitLogo from '../assets/logo git.png'
 import instaLogo from '../assets/logo insta.png'
 import linkedinLogo from '../assets/logo linkedin.png'
 import whatsLogo from '../assets/logo whats.png'
-import type { ContactOption, EntryPath, IconContent, ServiceContent } from '../types'
+import type { ClientLogo, ContactOption, EntryPath, IconContent, ServiceContent } from '../types'
+
+const whatsappPhone = '553597330160'
+
+export function createWhatsAppLink(message: string) {
+  return `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(message)}`
+}
+
+const clientLogoModules = import.meta.glob('../assets/dark/*.{png,PNG,jpg,JPG,jpeg,JPEG,webp,WEBP,svg,SVG}', {
+  eager: true,
+  import: 'default',
+})
+
+export const clientLogos: ClientLogo[] = Object.entries(clientLogoModules)
+  .sort(([a], [b]) => {
+    const numberA = Number(a.match(/\/(\d+)/)?.[1] ?? Number.MAX_SAFE_INTEGER)
+    const numberB = Number(b.match(/\/(\d+)/)?.[1] ?? Number.MAX_SAFE_INTEGER)
+
+    return numberA === numberB ? a.localeCompare(b) : numberA - numberB
+  })
+  .map(([path, image]) => ({
+    image: image as string,
+    label: path
+      .split('/')
+      .pop()!
+      .replace(/\.[^.]+$/, '')
+      .replace(/-dark$/, '')
+      .replace(/^\d+\s*/, '')
+      .replace(/-/g, ' ')
+      .replace(/\s+/g, ' '),
+  }))
 
 export const highlights: IconContent[] = [
   {
@@ -93,21 +122,25 @@ export const entryPaths: EntryPath[] = [
     title: 'Presença digital',
     label: 'Site ou landing page',
     text: 'Para explicar melhor sua oferta, captar contatos e dar uma primeira impressão mais forte.',
+    whatsappMessage: 'Olá! Quero conversar sobre site ou landing page para minha empresa.',
   },
   {
     title: 'Operação eficiente',
     label: 'Automação de processo',
     text: 'Para eliminar tarefas repetidas, integrar ferramentas e ganhar tempo operacional.',
+    whatsappMessage: 'Olá! Quero conversar sobre automação de processo para minha operação.',
   },
   {
     title: 'Gestão com dados',
     label: 'Dashboard ou integração',
     text: 'Para transformar informações soltas em visão clara para decidir e acompanhar resultados.',
+    whatsappMessage: 'Olá! Quero conversar sobre dashboard ou integração de dados.',
   },
   {
     title: 'Sistema próprio',
     label: 'Plataforma interna',
     text: 'Para criar uma solução sob medida quando ferramentas prontas já não resolvem bem.',
+    whatsappMessage: 'Olá! Quero conversar sobre uma plataforma interna sob medida.',
   },
 ]
 
@@ -119,17 +152,12 @@ export const contactOptions: ContactOption[] = [
   {
     image: whatsLogo,
     label: 'Whats',
-    href: 'https://wa.me/5500000000000',
+    href: createWhatsAppLink('Olá! Vim pelo site da Monkeys Tecnologia e quero conversar.'),
   },
   {
     image: instaLogo,
     label: 'Insta',
     href: 'https://instagram.com/monkeystecnologia',
-  },
-  {
-    image: gitLogo,
-    label: 'GitHub',
-    href: 'https://github.com/monkeystecnologia',
   },
   {
     icon: Mail,

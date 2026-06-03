@@ -1,5 +1,5 @@
 import { ArrowRight, Sparkles } from 'lucide-react'
-import { heroRotatingWords } from '../data/siteContent'
+import { createWhatsAppLink, heroRotatingWords } from '../data/siteContent'
 import heroImage from '../assets/monkeys-hero.png'
 
 export function HeroSection() {
@@ -30,7 +30,12 @@ export function HeroSection() {
         </p>
 
         <div className="hero-actions">
-          <a className="primary-action" href="#contato">
+          <a
+            className="primary-action"
+            href={createWhatsAppLink('Olá! Quero tirar uma ideia do papel com a Monkeys Tecnologia.')}
+            target="_blank"
+            rel="noreferrer"
+          >
             Tirar uma ideia do papel
             <ArrowRight size={19} strokeWidth={2.5} />
           </a>

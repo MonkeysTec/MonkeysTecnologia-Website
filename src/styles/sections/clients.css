@@ -1,0 +1,569 @@
+.clients-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0 -42px;
+  padding: 24px 0 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  width: min(100%, 100vw);
+  max-width: none;
+  overflow: visible;
+}
+
+.client-logo-showcase {
+  position: relative;
+  display: flex;
+  width: min(1260px, calc(100vw - 40px));
+  margin-inline: auto;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.client-off-scene,
+.client-off-focus,
+.client-constellation-scene {
+  position: absolute;
+  inset: -4% -5%;
+  z-index: 0;
+  width: 110%;
+  height: 108%;
+  object-fit: contain;
+  object-position: center;
+  transition:
+    opacity 520ms ease,
+    filter 520ms ease,
+    transform 680ms ease;
+}
+
+.client-off-scene {
+  opacity: 0.3;
+  filter: brightness(0.38) saturate(0.6) contrast(1.08);
+  transform: scale(1);
+  mask-image:
+    radial-gradient(circle at 51% 44%, #000 0 20%, rgba(0, 0, 0, 0.72) 35%, transparent 82%),
+    linear-gradient(180deg, transparent 0%, #000 18%, #000 70%, transparent 96%);
+  mask-composite: intersect;
+  -webkit-mask-image:
+    radial-gradient(circle at 51% 44%, #000 0 20%, rgba(0, 0, 0, 0.72) 35%, transparent 82%),
+    linear-gradient(180deg, transparent 0%, #000 18%, #000 70%, transparent 96%);
+  -webkit-mask-composite: source-in;
+}
+
+.client-off-focus {
+  z-index: 1;
+  opacity: 0.72;
+  filter:
+    brightness(0.92)
+    saturate(1.04)
+    contrast(1.08)
+    drop-shadow(0 0 18px rgba(255, 106, 0, 0.2));
+  transform: scale(1);
+  mask-image:
+    radial-gradient(ellipse at 50% 36%, #000 0 13%, transparent 25%),
+    radial-gradient(ellipse at 50% 62%, #000 0 17%, transparent 31%);
+  mask-composite: add;
+  -webkit-mask-image:
+    radial-gradient(ellipse at 50% 36%, #000 0 13%, transparent 25%),
+    radial-gradient(ellipse at 50% 62%, #000 0 17%, transparent 31%);
+  -webkit-mask-composite: source-over;
+}
+
+.client-constellation-scene {
+  opacity: 0.58;
+  filter: saturate(1.06) contrast(1.06);
+  transform: scale(0.985);
+  mask-image:
+    linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, #000 10%, #000 64%, transparent 96%);
+  mask-composite: intersect;
+  -webkit-mask-image:
+    linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, #000 10%, #000 64%, transparent 96%);
+  -webkit-mask-composite: source-in;
+}
+
+.client-logo-showcase:not(.is-open) .client-constellation-scene {
+  opacity: 0;
+  transform: scale(0.965);
+}
+
+.client-logo-showcase.is-open .client-off-scene {
+  opacity: 0;
+  filter: brightness(0.36) saturate(0.7);
+  transform: scale(1.018);
+}
+
+.client-logo-showcase.is-open .client-off-focus {
+  opacity: 0;
+  transform: scale(1.018);
+}
+
+.client-logo-showcase::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  content: '';
+  background: radial-gradient(circle at 50% 45%, transparent 42%, rgba(5, 5, 5, 0.16) 72%);
+}
+
+.client-logo-showcase::before {
+  position: absolute;
+  inset: auto -10% -92px;
+  z-index: 1;
+  height: 48%;
+  pointer-events: none;
+  content: '';
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(5, 5, 5, 0.58) 42%,
+    rgba(5, 5, 5, 0.92) 72%,
+    #050505 100%
+  );
+}
+
+.client-logo-grid {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  opacity: 1;
+  transition:
+    opacity 380ms ease 180ms,
+    transform 440ms ease 120ms;
+}
+
+.client-logo-showcase:not(.is-open) .client-logo-grid {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.98);
+}
+
+.client-logo-grid::before {
+  display: none;
+}
+
+.client-logo-card {
+  --star-left: 50%;
+  --star-top: 50%;
+  --star-size: 1px;
+  --star-active-size: 6px;
+  --logo-width: clamp(122px, 15vw, 178px);
+  --logo-height: clamp(72px, 8.8vw, 104px);
+  --logo-x: -50%;
+  --logo-y: calc(-100% - 20px);
+  position: absolute;
+  top: var(--star-top);
+  left: var(--star-left);
+  z-index: 1;
+  width: var(--star-size);
+  height: var(--star-size);
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow:
+    0 0 3px rgba(255, 255, 255, 0.54),
+    0 0 6px rgba(255, 106, 0, 0.34);
+  cursor: pointer;
+  outline: none;
+  transform: translate(-50%, -50%);
+  transition:
+    background 180ms ease,
+    width 220ms ease,
+    height 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.client-logo-showcase.is-open:not(.has-focused-logo) .client-logo-card {
+  animation: clientStarSpotlight var(--logo-sequence-duration, 23400ms) ease-in-out infinite;
+  animation-delay: var(--logo-delay, 0ms);
+}
+
+.client-logo-card::before {
+  position: absolute;
+  inset: -8px;
+  border-radius: inherit;
+  content: '';
+}
+
+.client-logo-card:nth-child(1) {
+  --star-left: 47.8%;
+  --star-top: 31.5%;
+  --star-active-size: 5px;
+  --logo-x: -14%;
+}
+
+.client-logo-card:nth-child(2) {
+  --star-left: 50.2%;
+  --star-top: 33.2%;
+  --star-active-size: 6px;
+  --logo-y: 22px;
+}
+
+.client-logo-card:nth-child(3) {
+  --star-left: 52.5%;
+  --star-top: 35%;
+  --star-active-size: 7px;
+  --logo-y: 22px;
+}
+
+.client-logo-card:nth-child(4) {
+  --star-left: 55.2%;
+  --star-top: 36.4%;
+  --star-active-size: 5px;
+  --logo-y: 22px;
+}
+
+.client-logo-card:nth-child(5) {
+  --star-left: 57.7%;
+  --star-top: 34.2%;
+  --star-active-size: 6px;
+  --logo-x: -64%;
+  --logo-y: -50%;
+}
+
+.client-logo-card:nth-child(6) {
+  --star-left: 48.7%;
+  --star-top: 36.8%;
+  --star-active-size: 5px;
+}
+
+.client-logo-card:nth-child(7) {
+  --star-left: 51.4%;
+  --star-top: 38.8%;
+  --star-active-size: 7px;
+}
+
+.client-logo-card:nth-child(8) {
+  --star-left: 54.1%;
+  --star-top: 40.5%;
+  --star-active-size: 5px;
+}
+
+.client-logo-card:nth-child(9) {
+  --star-left: 56.5%;
+  --star-top: 39.1%;
+  --star-active-size: 6px;
+  --logo-x: -74%;
+  --logo-y: calc(-100% - 20px);
+}
+
+.client-logo-card:nth-child(10) {
+  --star-left: 58.4%;
+  --star-top: 41.8%;
+  --star-active-size: 5px;
+}
+
+.client-logo-card:nth-child(11) {
+  --star-left: 47.1%;
+  --star-top: 40.7%;
+  --star-active-size: 7px;
+  --logo-y: calc(-100% - 20px);
+}
+
+.client-logo-card:nth-child(12) {
+  --star-left: 49.4%;
+  --star-top: 42.8%;
+  --star-active-size: 5px;
+}
+
+.client-logo-card:nth-child(13) {
+  --star-left: 52.1%;
+  --star-top: 43.9%;
+  --star-active-size: 6px;
+}
+
+.client-logo-card:nth-child(14) {
+  --star-left: 54.8%;
+  --star-top: 43.4%;
+  --star-active-size: 5px;
+}
+
+.client-logo-card:nth-child(15) {
+  --star-left: 57.2%;
+  --star-top: 44.6%;
+  --star-active-size: 7px;
+}
+
+.client-logo-card:nth-child(16) {
+  --star-left: 46.4%;
+  --star-top: 35.2%;
+  --star-active-size: 5px;
+}
+
+.client-logo-card:nth-child(17) {
+  --star-left: 49.8%;
+  --star-top: 30.2%;
+  --star-active-size: 6px;
+}
+
+.client-logo-card:nth-child(18) {
+  --star-left: 53.7%;
+  --star-top: 31.7%;
+  --star-active-size: 5px;
+}
+
+.client-logo-card:nth-child(19) {
+  --star-left: 56.8%;
+  --star-top: 32.2%;
+  --star-active-size: 6px;
+}
+
+.client-logo-card:nth-child(20) {
+  --star-left: 59%;
+  --star-top: 36.6%;
+  --star-active-size: 5px;
+}
+
+.client-logo-card:nth-child(21) {
+  --star-left: 45.8%;
+  --star-top: 38.5%;
+  --star-active-size: 6px;
+}
+
+.client-logo-card:nth-child(22) {
+  --star-left: 48.2%;
+  --star-top: 45.1%;
+  --star-active-size: 5px;
+}
+
+.client-logo-card:nth-child(23) {
+  --star-left: 51.1%;
+  --star-top: 46.2%;
+  --star-active-size: 7px;
+}
+
+.client-logo-card:nth-child(24) {
+  --star-left: 53.6%;
+  --star-top: 46.8%;
+  --star-active-size: 5px;
+}
+
+.client-logo-card:nth-child(25) {
+  --star-left: 56.1%;
+  --star-top: 46.1%;
+  --star-active-size: 6px;
+}
+
+.client-logo-card:nth-child(26) {
+  --star-left: 58.8%;
+  --star-top: 45.2%;
+  --star-active-size: 5px;
+}
+
+.client-feature-screen {
+  position: absolute;
+  left: 65.9%;
+  top: calc(11.2% + 50px);
+  z-index: 3;
+  display: grid;
+  width: calc(27.5% - 24px);
+  height: calc(22.5% - 38px);
+  place-items: center;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  box-shadow: none;
+  clip-path: polygon(2% 13%, 99.4% 0, 100% 88%, 0 100%);
+  transform: perspective(980px) rotateY(5deg) rotateZ(-5.4deg) skewX(-0.6deg);
+  transform-origin: center;
+  transition: opacity 360ms ease 220ms;
+}
+
+.client-logo-showcase.is-open .client-feature-screen {
+  opacity: 1;
+}
+
+.client-feature-screen::before {
+  display: none;
+}
+
+.client-feature-screen::after {
+  display: none;
+}
+
+.client-feature-logo {
+  --feature-logo-height: calc(64% + 24px);
+  --feature-logo-width: min(calc(72% + 44px), 240px);
+  --feature-logo-y: 44%;
+  position: absolute;
+  z-index: 2;
+  width: var(--feature-logo-width);
+  height: var(--feature-logo-height);
+  object-fit: contain;
+  object-position: center var(--feature-logo-y);
+  opacity: 0;
+  pointer-events: none;
+  filter:
+    saturate(1.02)
+    contrast(1.04)
+    drop-shadow(0 14px 22px rgba(0, 0, 0, 0.58))
+    drop-shadow(0 0 18px rgba(255, 106, 0, 0.24));
+  transform: scale(0.76);
+  transform-origin: center;
+  transition:
+    opacity 180ms ease,
+    transform 240ms ease;
+}
+
+.client-feature-logo--fit-icon {
+  --feature-logo-height: calc(64% + 2px);
+  --feature-logo-width: min(calc(62% + 18px), 190px);
+  --feature-logo-y: 42%;
+}
+
+.client-feature-logo--fit-compact {
+  --feature-logo-height: calc(64% + 4px);
+  --feature-logo-width: min(calc(66% + 22px), 205px);
+  --feature-logo-y: 41%;
+}
+
+.client-feature-logo--fit-wide {
+  --feature-logo-height: calc(64% + 12px);
+  --feature-logo-width: min(calc(76% + 34px), 242px);
+  --feature-logo-y: 43%;
+}
+
+.client-feature-logo--fit-ultrawide {
+  --feature-logo-height: calc(64% + 6px);
+  --feature-logo-width: min(calc(82% + 28px), 250px);
+  --feature-logo-y: 43%;
+}
+
+.client-logo-showcase.is-open:not(.has-focused-logo) .client-feature-logo {
+  animation: clientLogoSpotlight var(--logo-sequence-duration, 23400ms) ease-in-out infinite;
+  animation-delay: var(--logo-delay, 0ms);
+}
+
+.client-logo-card:hover,
+.client-logo-card:focus-visible,
+.client-logo-card.is-focused {
+  z-index: 20;
+  width: var(--star-active-size);
+  height: var(--star-active-size);
+  background: #ffffff;
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.92),
+    0 0 34px rgba(255, 255, 255, 0.58);
+  transform: translate(-50%, -50%) scale(1.34);
+}
+
+.client-logo-showcase.has-focused-logo .client-feature-logo {
+  animation: none;
+}
+
+.client-logo-showcase.has-focused-logo .client-logo-card {
+  animation: none;
+}
+
+.client-feature-logo.is-focused {
+  opacity: 0.5;
+  transform: scale(1);
+}
+
+@keyframes clientLogoSpotlight {
+  0%,
+  2.8%,
+  100% {
+    opacity: 0;
+    transform: scale(0.76);
+  }
+
+  3.8%,
+  6.2% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  7.7% {
+    opacity: 0;
+    transform: scale(0.86);
+  }
+}
+
+@keyframes clientStarSpotlight {
+  0%,
+  2.8%,
+  100% {
+    width: var(--star-size);
+    height: var(--star-size);
+    background: #ffffff;
+    box-shadow:
+      0 0 3px rgba(255, 255, 255, 0.54),
+      0 0 6px rgba(255, 106, 0, 0.34);
+    transform: translate(-50%, -50%);
+  }
+
+  3.8%,
+  6.2% {
+    width: var(--star-active-size);
+    height: var(--star-active-size);
+    background: #ffffff;
+    box-shadow:
+      0 0 14px rgba(255, 255, 255, 0.94),
+      0 0 38px rgba(255, 255, 255, 0.68);
+    transform: translate(-50%, -50%) scale(1.34);
+  }
+
+  7.7% {
+    width: var(--star-size);
+    height: var(--star-size);
+    background: #ffffff;
+    box-shadow:
+      0 0 3px rgba(255, 255, 255, 0.54),
+      0 0 6px rgba(255, 106, 0, 0.34);
+    transform: translate(-50%, -50%);
+  }
+}
+
+.client-open-trigger {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.client-open-trigger:focus-visible {
+  outline: 2px solid rgba(255, 106, 0, 0.86);
+  outline-offset: -18px;
+}
+
+@media (max-width: 640px) {
+  .client-logo-card {
+    --logo-width: clamp(86px, 28vw, 116px);
+    --logo-height: clamp(52px, 17vw, 72px);
+  }
+
+  .client-logo-card:nth-child(5),
+  .client-logo-card:nth-child(9) {
+    --logo-x: -84%;
+  }
+
+  .client-logo-card:nth-child(11) {
+    --logo-y: -104px;
+  }
+}

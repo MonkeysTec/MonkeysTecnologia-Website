@@ -1,5 +1,5 @@
 import { ArrowRight, Rocket } from 'lucide-react'
-import { entryPaths } from '../data/siteContent'
+import { createWhatsAppLink, entryPaths } from '../data/siteContent'
 
 export function EntrySection() {
   return (
@@ -19,12 +19,17 @@ export function EntrySection() {
       </div>
 
       <div className="entry-grid">
-        {entryPaths.map(({ title, label, text }) => (
+        {entryPaths.map(({ title, label, text, whatsappMessage }) => (
           <article className="entry-card" key={title}>
             <span>{title}</span>
             <h3>{label}</h3>
             <p>{text}</p>
-            <a href="#contato" aria-label={`Conversar sobre ${label}`}>
+            <a
+              href={createWhatsAppLink(whatsappMessage)}
+              aria-label={`Conversar sobre ${label}`}
+              target="_blank"
+              rel="noreferrer"
+            >
               Conversar
               <ArrowRight size={17} strokeWidth={2.5} />
             </a>

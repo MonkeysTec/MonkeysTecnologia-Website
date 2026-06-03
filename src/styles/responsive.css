@@ -82,13 +82,19 @@
   }
 
   .process-section,
+  .clients-section,
   .contact-section {
     gap: 30px;
   }
 
+  .clients-section,
   .contact-section {
-    align-items: flex-start;
     grid-template-columns: 1fr;
+  }
+
+  .client-logo-showcase {
+    height: auto;
+    justify-content: center;
   }
 }
 
@@ -102,6 +108,7 @@
   #antes-solucao,
   #caminhos,
   #processo,
+  #clientes,
   #contato {
     scroll-margin-top: 128px;
   }
@@ -112,6 +119,7 @@
   .services-section,
   .entry-section,
   .process-section,
+  .clients-section,
   .contact-section {
     width: min(100% - 24px, 430px);
     max-width: 430px;
@@ -319,6 +327,20 @@
     padding: 12px 0 64px;
   }
 
+  .clients-section {
+    min-height: auto;
+    margin-inline: auto;
+    margin-bottom: -34px;
+    padding: 20px 0 0;
+  }
+
+  .client-logo-showcase {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    border-width: 0;
+  }
+
   .process-list {
     gap: 10px;
   }
@@ -402,6 +424,7 @@
   .services-section,
   .entry-section,
   .process-section,
+  .clients-section,
   .contact-section {
     width: min(100% - 20px, 360px);
     max-width: 360px;
@@ -433,6 +456,10 @@
   .entry-card,
   .contact-section {
     padding: 18px;
+  }
+
+  .clients-section {
+    padding: 18px 0 0;
   }
 
   .contact-section h2 {
