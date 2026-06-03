@@ -5,7 +5,7 @@
   max-width: 100%;
   min-height: 100vh;
   min-height: 100svh;
-  overflow-x: visible;
+  overflow-x: clip;
   overflow-y: visible;
   touch-action: pan-y;
   padding-top: var(--topbar-space);
