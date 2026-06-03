@@ -553,6 +553,45 @@
 }
 
 @media (max-width: 640px) {
+  .client-feature-screen {
+    left: 66.8%;
+    top: 18.8%;
+    width: 22.4%;
+    height: 12.8%;
+    clip-path: polygon(2% 12%, 99% 0, 100% 88%, 0 100%);
+    transform: perspective(520px) rotateY(3deg) rotateZ(-5deg) skewX(-0.4deg);
+  }
+
+  .client-feature-logo {
+    --feature-logo-height: 72%;
+    --feature-logo-width: 84%;
+    --feature-logo-y: 44%;
+    filter:
+      saturate(1.02)
+      contrast(1.04)
+      drop-shadow(0 7px 10px rgba(0, 0, 0, 0.48))
+      drop-shadow(0 0 8px rgba(255, 106, 0, 0.18));
+  }
+
+  .client-feature-logo--fit-icon,
+  .client-feature-logo--fit-compact {
+    --feature-logo-height: 68%;
+    --feature-logo-width: 70%;
+    --feature-logo-y: 42%;
+  }
+
+  .client-feature-logo--fit-wide {
+    --feature-logo-height: 72%;
+    --feature-logo-width: 92%;
+    --feature-logo-y: 43%;
+  }
+
+  .client-feature-logo--fit-ultrawide {
+    --feature-logo-height: 68%;
+    --feature-logo-width: 96%;
+    --feature-logo-y: 43%;
+  }
+
   .client-logo-card {
     --logo-width: clamp(86px, 28vw, 116px);
     --logo-height: clamp(52px, 17vw, 72px);
