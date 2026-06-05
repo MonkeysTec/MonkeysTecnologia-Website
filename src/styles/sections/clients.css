@@ -389,9 +389,9 @@
   box-shadow:
     14px 24px 24px rgba(0, 0, 0, 0.3),
     0 0 28px rgba(255, 106, 0, 0.08);
-  clip-path: polygon(4.4% 12.8%, 99.6% 0, 100% 88.2%, 0.8% 100%);
-  filter: drop-shadow(13px 16px 13px rgba(0, 0, 0, 0.3));
-  transform: perspective(1080px) rotateY(55deg) rotateX(1.4deg) rotateZ(-5.95deg) skewX(-2.15deg);
+  clip-path: polygon(1.5% 12.2%, 99.6% 0, 100% 88.2%, 0 100%);
+  filter: drop-shadow(10px 15px 12px rgba(0, 0, 0, 0.26));
+  transform: perspective(1080px) rotateY(15deg) rotateX(1.4deg) rotateZ(-5.95deg) skewX(-1.45deg);
   transform-origin: right center;
   transition: opacity 360ms ease 220ms;
 }
@@ -408,9 +408,9 @@
   background:
     linear-gradient(145deg, rgba(255, 106, 0, 0.09), rgba(255, 106, 0, 0.018) 54%, transparent 76%),
     rgba(0, 0, 0, 0.28);
-  clip-path: polygon(3.2% 12.8%, 98% 0, 100% 88.2%, 1.2% 100%);
+  clip-path: polygon(0 12.2%, 98% 0, 100% 88.2%, 1% 100%);
   filter: blur(0.2px);
-  transform: translate3d(11px, 13px, -1px);
+  transform: translate3d(9px, 13px, -1px);
 }
 
 .client-feature-screen::after {
