@@ -32,17 +32,22 @@ export const clientLogos: ClientLogo[] = Object.entries(clientLogoModules)
 
     return numberA === numberB ? a.localeCompare(b) : numberA - numberB
   })
-  .map(([path, image]) => ({
-    image: image as string,
-    label: path
-      .split('/')
-      .pop()!
-      .replace(/\.[^.]+$/, '')
-      .replace(/-dark$/, '')
-      .replace(/^\d+\s*/, '')
-      .replace(/-/g, ' ')
-      .replace(/\s+/g, ' '),
-  }))
+  .map(([path, image]) => {
+    const fileName = path.split('/').pop()!.replace(/\.[^.]+$/, '')
+    const label =
+      fileName === '7'
+        ? 'Portal IDEA'
+        : fileName
+            .replace(/-dark$/, '')
+            .replace(/^\d+\s*/, '')
+            .replace(/-/g, ' ')
+            .replace(/\s+/g, ' ')
+
+    return {
+      image: image as string,
+      label,
+    }
+  })
 
 export const highlights: IconContent[] = [
   {
