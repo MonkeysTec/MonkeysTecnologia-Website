@@ -371,23 +371,28 @@
 
 .client-feature-screen {
   position: absolute;
-  left: 65.9%;
-  top: calc(11.2% + 50px);
+  left: 67.15%;
+  top: calc(8.85% + 50px);
   z-index: 3;
   display: grid;
-  width: calc(27.5% - 24px);
-  height: calc(22.5% - 38px);
+  width: calc(24.2% - 20px);
+  height: calc(24.2% - 38px);
   place-items: center;
-  overflow: hidden;
+  overflow: visible;
   pointer-events: none;
   opacity: 0;
   border: 0;
   border-radius: 3px;
-  background: transparent;
-  box-shadow: none;
-  clip-path: polygon(2% 13%, 99.4% 0, 100% 88%, 0 100%);
-  transform: perspective(980px) rotateY(5deg) rotateZ(-5.4deg) skewX(-0.6deg);
-  transform-origin: center;
+  background:
+    linear-gradient(122deg, rgba(255, 166, 71, 0.045), rgba(255, 106, 0, 0.018) 42%, transparent 74%),
+    rgba(12, 8, 5, 0.025);
+  box-shadow:
+    14px 24px 24px rgba(0, 0, 0, 0.3),
+    0 0 28px rgba(255, 106, 0, 0.08);
+  clip-path: polygon(4.4% 12.8%, 99.6% 0, 100% 88.2%, 0.8% 100%);
+  filter: drop-shadow(13px 16px 13px rgba(0, 0, 0, 0.3));
+  transform: perspective(1080px) rotateY(55deg) rotateX(1.4deg) rotateZ(-5.95deg) skewX(-2.15deg);
+  transform-origin: right center;
   transition: opacity 360ms ease 220ms;
 }
 
@@ -396,17 +401,36 @@
 }
 
 .client-feature-screen::before {
-  display: none;
+  position: absolute;
+  inset: 5px -10px -13px 10px;
+  z-index: 0;
+  content: '';
+  background:
+    linear-gradient(145deg, rgba(255, 106, 0, 0.09), rgba(255, 106, 0, 0.018) 54%, transparent 76%),
+    rgba(0, 0, 0, 0.28);
+  clip-path: polygon(3.2% 12.8%, 98% 0, 100% 88.2%, 1.2% 100%);
+  filter: blur(0.2px);
+  transform: translate3d(11px, 13px, -1px);
 }
 
 .client-feature-screen::after {
-  display: none;
+  position: absolute;
+  inset: -1px;
+  z-index: 1;
+  content: '';
+  border: 1px solid rgba(255, 138, 35, 0.24);
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 18px rgba(255, 128, 21, 0.07),
+    0 0 18px rgba(255, 106, 0, 0.1);
+  clip-path: inherit;
 }
 
 .client-feature-logo {
   --feature-logo-height: calc(64% + 24px);
   --feature-logo-width: min(calc(72% + 44px), 240px);
   --feature-logo-y: 44%;
+  --feature-logo-tilt: 0deg;
   position: absolute;
   z-index: 2;
   width: var(--feature-logo-width);
@@ -420,7 +444,7 @@
     contrast(1.04)
     drop-shadow(0 14px 22px rgba(0, 0, 0, 0.58))
     drop-shadow(0 0 18px rgba(255, 106, 0, 0.24));
-  transform: scale(0.76);
+  transform: scale(0.76) rotate(var(--feature-logo-tilt));
   transform-origin: center;
   transition:
     opacity 180ms ease,
@@ -443,12 +467,14 @@
   --feature-logo-height: calc(64% + 12px);
   --feature-logo-width: min(calc(76% + 34px), 242px);
   --feature-logo-y: 43%;
+  --feature-logo-tilt: 1.8deg;
 }
 
 .client-feature-logo--fit-ultrawide {
   --feature-logo-height: calc(64% + 6px);
   --feature-logo-width: min(calc(82% + 28px), 250px);
   --feature-logo-y: 43%;
+  --feature-logo-tilt: 2.1deg;
 }
 
 .client-logo-showcase.is-open:not(.has-focused-logo) .client-feature-logo {
@@ -479,7 +505,7 @@
 
 .client-feature-logo.is-focused {
   opacity: 0.5;
-  transform: scale(1);
+  transform: scale(1) rotate(var(--feature-logo-tilt));
 }
 
 @keyframes clientLogoSpotlight {
@@ -487,18 +513,18 @@
   2.8%,
   100% {
     opacity: 0;
-    transform: scale(0.76);
+    transform: scale(0.76) rotate(var(--feature-logo-tilt));
   }
 
   3.8%,
   6.2% {
     opacity: 0.5;
-    transform: scale(1);
+    transform: scale(1) rotate(var(--feature-logo-tilt));
   }
 
   7.7% {
     opacity: 0;
-    transform: scale(0.86);
+    transform: scale(0.86) rotate(var(--feature-logo-tilt));
   }
 }
 
@@ -554,12 +580,22 @@
 
 @media (max-width: 640px) {
   .client-feature-screen {
-    left: 66.8%;
-    top: 18.8%;
-    width: 22.4%;
-    height: 12.8%;
-    clip-path: polygon(2% 12%, 99% 0, 100% 88%, 0 100%);
-    transform: perspective(520px) rotateY(3deg) rotateZ(-5deg) skewX(-0.4deg);
+    left: 67.75%;
+    top: 17.95%;
+    width: 19.8%;
+    height: 13.7%;
+    clip-path: polygon(4.2% 12.8%, 99.5% 0, 100% 88.2%, 0.8% 100%);
+    filter: drop-shadow(6px 9px 7px rgba(0, 0, 0, 0.28));
+    transform: perspective(580px) rotateY(14deg) rotateX(1.2deg) rotateZ(-5.85deg) skewX(-1.85deg);
+    transform-origin: right center;
+    box-shadow:
+      9px 15px 16px rgba(0, 0, 0, 0.34),
+      0 0 14px rgba(255, 106, 0, 0.08);
+  }
+
+  .client-feature-screen::before {
+    inset: 3px -5px -7px 5px;
+    transform: translate3d(5px, 7px, -1px);
   }
 
   .client-feature-logo {
