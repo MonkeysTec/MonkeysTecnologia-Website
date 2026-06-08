@@ -103,7 +103,8 @@
   pointer-events: none;
 }
 
-.contact-menu-items a {
+.contact-menu-items a,
+.contact-menu-items button {
   --angle: 0deg;
   --distance: 124px;
   --return-angle: 0deg;
@@ -117,13 +118,15 @@
   flex-direction: column;
   gap: 0;
   border: 0;
-  border-radius: 0;
-  background: transparent;
+  border-radius: 50%;
+  background: rgba(255, 106, 0, 0.12);
   color: var(--text-strong);
   font-size: 0;
   opacity: 0;
   pointer-events: none;
   text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
   transform: rotate(var(--angle)) translateY(0) rotate(var(--return-angle)) scale(0.28);
   transition:
     border-color 180ms ease,
@@ -134,40 +137,54 @@
 }
 
 .contact-menu-items a svg,
-.contact-menu-items a img {
+.contact-menu-items a img,
+.contact-menu-items button svg,
+.contact-menu-items button img {
   width: 58px;
   height: 58px;
   transition: transform 180ms ease, filter 180ms ease;
 }
 
-.contact-menu-items a svg {
+.contact-menu-items a svg,
+.contact-menu-items button svg {
   color: var(--orange);
 }
 
-.contact-menu-items a img {
-  object-fit: contain;
+.contact-menu-items a img,
+.contact-menu-items button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   filter: drop-shadow(0 0 10px rgba(255, 106, 0, 0.42));
+}
+
+.contact-menu-items button img {
+  width: 100%;
+  height: 100%;
 }
 
 .contact-menu[open] .contact-menu-items {
   pointer-events: auto;
 }
 
-.contact-menu[open] .contact-menu-items a {
+.contact-menu[open] .contact-menu-items a,
+.contact-menu[open] .contact-menu-items button {
   opacity: 1;
   pointer-events: auto;
   transform: rotate(var(--angle)) translateY(calc(var(--distance) * -1)) rotate(var(--return-angle)) scale(1);
 }
 
-.contact-menu[open] .contact-menu-items a:nth-child(1) {
-  --angle: -100deg;
-  --return-angle: 100deg;
+.contact-menu[open] .contact-menu-items a:nth-child(1),
+.contact-menu[open] .contact-menu-items button:nth-child(1) {
+  --angle: -72deg;
+  --return-angle: 72deg;
   transition-delay: 20ms;
 }
 
-.contact-menu[open] .contact-menu-items a:nth-child(2) {
-  --angle: -20deg;
-  --return-angle: 20deg;
+.contact-menu[open] .contact-menu-items a:nth-child(2),
+.contact-menu[open] .contact-menu-items button:nth-child(2) {
+  --angle: 72deg;
+  --return-angle: -72deg;
   transition-delay: 70ms;
 }
 
@@ -184,7 +201,9 @@
 }
 
 .contact-menu-items a:hover,
-.contact-menu-items a:focus-visible {
+.contact-menu-items a:focus-visible,
+.contact-menu-items button:hover,
+.contact-menu-items button:focus-visible {
   box-shadow: none;
   color: #ffffff;
   outline: none;
@@ -193,7 +212,91 @@
 .contact-menu-items a:hover svg,
 .contact-menu-items a:hover img,
 .contact-menu-items a:focus-visible svg,
-.contact-menu-items a:focus-visible img {
+.contact-menu-items a:focus-visible img,
+.contact-menu-items button:hover svg,
+.contact-menu-items button:hover img,
+.contact-menu-items button:focus-visible svg,
+.contact-menu-items button:focus-visible img {
   transform: scale(1.12);
+}
+
+.founder-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(5, 5, 5, 0.78);
+  backdrop-filter: blur(14px);
+}
+
+.founder-modal {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(180px, 0.42fr) minmax(0, 0.58fr);
+  width: min(920px, 100%);
+  max-height: min(760px, calc(100vh - 48px));
+  overflow: auto;
+  border: 1px solid rgba(255, 106, 0, 0.38);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 106, 0, 0.16), rgba(255, 255, 255, 0.035)),
+    #090909;
+  box-shadow: 0 24px 90px rgba(0, 0, 0, 0.58);
+}
+
+.founder-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid rgba(255, 106, 0, 0.44);
+  border-radius: 50%;
+  background: rgba(8, 8, 8, 0.82);
+  color: var(--orange);
+  cursor: pointer;
+}
+
+.founder-modal-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 460px;
+  object-fit: cover;
+}
+
+.founder-modal-copy {
+  padding: 46px 38px 34px;
+}
+
+.founder-modal-copy h3 {
+  margin: 0 48px 18px 0;
+  color: var(--text-strong);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1;
+}
+
+.founder-modal-copy p {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+.founder-signature {
+  display: grid;
+  gap: 8px;
+  margin-top: 26px;
+  color: var(--text-strong);
+}
+
+.founder-signature img {
+  width: min(220px, 62%);
+  height: auto;
+  filter: drop-shadow(0 0 12px rgba(255, 106, 0, 0.16));
 }
 

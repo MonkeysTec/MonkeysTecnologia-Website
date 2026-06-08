@@ -425,7 +425,8 @@
     pointer-events: none;
   }
 
-  .contact-menu-items a {
+  .contact-menu-items a,
+  .contact-menu-items button {
     --distance: 82px;
     position: absolute;
     width: 52px;
@@ -436,15 +437,54 @@
   }
 
   .contact-menu-items a svg,
-  .contact-menu-items a img {
+  .contact-menu-items a img,
+  .contact-menu-items button svg,
+  .contact-menu-items button img {
     width: 42px;
     height: 42px;
   }
 
-  .contact-menu[open] .contact-menu-items a {
+  .contact-menu-items button img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .contact-menu[open] .contact-menu-items a,
+  .contact-menu[open] .contact-menu-items button {
     opacity: 1;
     pointer-events: auto;
     transform: rotate(var(--angle)) translateY(calc(var(--distance) * -1)) rotate(var(--return-angle)) scale(1);
+  }
+
+  .founder-modal-backdrop {
+    padding: 14px;
+  }
+
+  .founder-modal {
+    grid-template-columns: 1fr;
+    max-height: calc(100vh - 28px);
+  }
+
+  .founder-modal-photo {
+    height: 260px;
+    min-height: 0;
+  }
+
+  .founder-modal-copy {
+    padding: 26px 22px 24px;
+  }
+
+  .founder-modal-copy h3 {
+    margin-right: 46px;
+  }
+
+  .founder-modal-copy p {
+    font-size: 0.92rem;
+    line-height: 1.62;
+  }
+
+  .founder-signature img {
+    width: min(190px, 72%);
   }
 }
 

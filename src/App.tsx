@@ -8,6 +8,7 @@ import { PainSection } from './sections/PainSection'
 import { ProcessSection } from './sections/ProcessSection'
 import { ServicesSection } from './sections/ServicesSection'
 import { useRevealOnScroll } from './hooks/useRevealOnScroll'
+import { contactOptions } from './data/siteContent'
 import './App.css'
 
 function App() {
@@ -25,7 +26,20 @@ function App() {
       <ClientsSection />
       <ContactSection />
       <footer className="site-footer">
-        © 2025 MonkeysTecnologia. All rights reserved.
+        <p>&copy; 2025 MonkeysTecnologia. All rights reserved.</p>
+        <div className="site-footer-socials" aria-label="Redes sociais">
+          {contactOptions.map(({ icon: Icon, image, label, href }) => (
+            <a
+              href={href}
+              key={label}
+              target={href.startsWith('http') ? '_blank' : undefined}
+              rel={href.startsWith('http') ? 'noreferrer' : undefined}
+              aria-label={label}
+            >
+              {image ? <img src={image} alt="" aria-hidden="true" /> : Icon ? <Icon aria-hidden="true" /> : null}
+            </a>
+          ))}
+        </div>
       </footer>
       <div className="page-end-spacer" aria-hidden="true" />
     </main>

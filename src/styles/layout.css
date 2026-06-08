@@ -50,3 +50,39 @@
   font-size: 0.86rem;
   text-align: center;
 }
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.site-footer-socials a {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange);
+  text-decoration: none;
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.site-footer-socials a:hover,
+.site-footer-socials a:focus-visible {
+  filter: drop-shadow(0 0 12px rgba(255, 106, 0, 0.42));
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.site-footer-socials img,
+.site-footer-socials svg {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
