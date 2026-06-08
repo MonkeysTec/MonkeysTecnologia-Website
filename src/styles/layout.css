@@ -7,7 +7,6 @@
   min-height: 100svh;
   overflow-x: clip;
   overflow-y: visible;
-  touch-action: pan-y;
   padding-top: var(--topbar-space);
   padding-bottom: max(34px, env(safe-area-inset-bottom));
   background:
