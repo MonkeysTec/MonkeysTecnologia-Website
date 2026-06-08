@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import type { CSSProperties } from 'react'
 import { clientLogos } from '../data/siteContent'
 
@@ -6,15 +5,7 @@ const monkeyConstellation = new URL('../assets/monkey-teladupla.png', import.met
 const logoStepDuration = 1600
 
 export function ClientsSection() {
-  const [focusedLogo, setFocusedLogo] = useState<number | null>(null)
-  const [sequenceKey, setSequenceKey] = useState(0)
-
-  function resetLogoSequence() {
-    setFocusedLogo(null)
-    setSequenceKey((key) => key + 1)
-  }
-
-  function getLogoClassName(label: string, index: number) {
+  function getLogoClassName(label: string) {
     const slug = label
       .toLowerCase()
       .normalize('NFD')
@@ -33,18 +24,15 @@ export function ClientsSection() {
               ? ' client-feature-logo--fit-compact'
               : ''
 
-    const isFocusedPair = focusedLogo !== null && Math.floor(focusedLogo / 2) === Math.floor(index / 2)
-
-    return `client-feature-logo client-feature-logo--${slug}${fitClassName}${isFocusedPair ? ' is-focused' : ''}`
+    return `client-feature-logo client-feature-logo--${slug}${fitClassName}`
   }
 
   return (
     <section className="clients-section reveal" id="clientes">
       <h2 className="clients-title">Nossos Clientes</h2>
       <div
-        className={`client-logo-showcase is-open${focusedLogo !== null ? ' has-focused-logo' : ''}`}
+        className="client-logo-showcase is-open"
         style={{ '--logo-sequence-duration': `${Math.ceil(clientLogos.length / 2) * logoStepDuration}ms` } as CSSProperties}
-        onMouseLeave={resetLogoSequence}
       >
         <img
           className="client-constellation-scene"
@@ -52,18 +40,13 @@ export function ClientsSection() {
           alt=""
           aria-hidden="true"
         />
-        <div className="client-logo-grid" aria-label="Logos de clientes" key={sequenceKey}>
-          {clientLogos.map(({ image, label }, index) => (
+        <div className="client-logo-grid" aria-label="Logos de clientes">
+          {clientLogos.map(({ image }, index) => (
             <div
-              className={`client-logo-card${focusedLogo === index ? ' is-focused' : ''}`}
+              className="client-logo-card"
               key={image}
               style={{ '--logo-delay': `${Math.floor(index / 2) * logoStepDuration}ms` } as CSSProperties}
-              tabIndex={0}
-              aria-label={`Destacar ${label}`}
-              onMouseEnter={() => setFocusedLogo(index)}
-              onMouseLeave={resetLogoSequence}
-              onFocus={() => setFocusedLogo(index)}
-              onBlur={resetLogoSequence}
+              aria-hidden="true"
             />
           ))}
         </div>
@@ -71,7 +54,7 @@ export function ClientsSection() {
           <div
             className={`client-feature-screen client-feature-screen--${side}`}
             aria-hidden="true"
-            key={`screen-${side}-${sequenceKey}`}
+            key={`screen-${side}`}
           >
             {clientLogos.map(({ image, label }, index) => {
               const isRightScreen = index % 2 === 1
@@ -79,7 +62,7 @@ export function ClientsSection() {
 
               return (
                 <img
-                  className={getLogoClassName(label, index)}
+                  className={getLogoClassName(label)}
                   src={image}
                   alt=""
                   key={`${label}-${image}`}

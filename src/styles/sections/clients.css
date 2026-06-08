@@ -197,7 +197,7 @@
   box-shadow:
     0 0 3px rgba(255, 255, 255, 0.54),
     0 0 6px rgba(255, 106, 0, 0.34);
-  cursor: pointer;
+  pointer-events: none;
   outline: none;
   transform: translate(-50%, -50%);
   transition:
@@ -208,7 +208,7 @@
     transform 220ms ease;
 }
 
-.client-logo-showcase.is-open:not(.has-focused-logo) .client-logo-card {
+.client-logo-showcase.is-open .client-logo-card {
   animation: clientStarSpotlight var(--logo-sequence-duration, 23400ms) ease-in-out infinite;
   animation-delay: var(--logo-delay, 0ms);
 }
@@ -504,35 +504,9 @@
   --feature-logo-y: 44%;
 }
 
-.client-logo-showcase.is-open:not(.has-focused-logo) .client-feature-logo {
+.client-logo-showcase.is-open .client-feature-logo {
   animation: clientLogoSpotlight var(--logo-sequence-duration, 23400ms) ease-in-out infinite;
   animation-delay: var(--logo-delay, 0ms);
-}
-
-.client-logo-card:hover,
-.client-logo-card:focus-visible,
-.client-logo-card.is-focused {
-  z-index: 20;
-  width: var(--star-active-size);
-  height: var(--star-active-size);
-  background: #ffffff;
-  box-shadow:
-    0 0 12px rgba(255, 255, 255, 0.92),
-    0 0 34px rgba(255, 255, 255, 0.58);
-  transform: translate(-50%, -50%) scale(1.34);
-}
-
-.client-logo-showcase.has-focused-logo .client-feature-logo {
-  animation: none;
-}
-
-.client-logo-showcase.has-focused-logo .client-logo-card {
-  animation: none;
-}
-
-.client-feature-logo.is-focused {
-  opacity: 1;
-  transform: translateY(14px) perspective(520px) rotateY(calc(var(--feature-logo-depth) * var(--feature-logo-depth-direction))) scale(1) rotate(var(--feature-logo-tilt));
 }
 
 @keyframes clientLogoSpotlight {
