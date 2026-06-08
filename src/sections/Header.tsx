@@ -1,5 +1,5 @@
 import { useEffect, useState, type MouseEvent } from 'react'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Menu, X } from 'lucide-react'
 import monkeyIniLogo from '../assets/monkey-ini.png'
 import { createWhatsAppLink } from '../data/siteContent'
 
@@ -76,11 +76,7 @@ export function Header() {
   const handleBrandClick = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
 
-    if (isMobileNav) {
-      setIsMenuOpen((current) => !current)
-      return
-    }
-
+    setIsMenuOpen(false)
     setActiveSection('')
     scrollToSection('#inicio')
   }
@@ -112,12 +108,21 @@ export function Header() {
         className="brand"
         href="#inicio"
         aria-label="Monkeys Tecnologia"
-        aria-expanded={isMobileNav ? isMenuOpen : undefined}
-        aria-controls={isMobileNav ? 'primary-navigation' : undefined}
         onClick={handleBrandClick}
       >
         <img className="brand-image" src={monkeyIniLogo} alt="Monkeys Tecnologia" />
       </a>
+
+      <button
+        className="nav-menu-toggle"
+        type="button"
+        aria-label={isMenuOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação'}
+        aria-expanded={isMobileNav ? isMenuOpen : undefined}
+        aria-controls="primary-navigation"
+        onClick={() => setIsMenuOpen((current) => !current)}
+      >
+        {isMenuOpen ? <X size={24} strokeWidth={2.4} /> : <Menu size={24} strokeWidth={2.4} />}
+      </button>
 
       <nav className="nav-links" id="primary-navigation" aria-label="Seções">
         {navItems.map((item) => (

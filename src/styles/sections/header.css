@@ -46,6 +46,31 @@
   text-decoration: none;
 }
 
+.nav-menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 106, 0, 0.42);
+  border-radius: 8px;
+  background: rgba(255, 106, 0, 0.08);
+  color: var(--orange);
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.nav-menu-toggle:hover,
+.nav-menu-toggle:focus-visible {
+  border-color: rgba(255, 106, 0, 0.68);
+  background: rgba(255, 106, 0, 0.14);
+  box-shadow: 0 0 24px rgba(255, 106, 0, 0.2);
+  outline: none;
+}
+
 .brand-image {
   display: block;
   width: clamp(150px, 18vw, 210px);
