@@ -384,6 +384,13 @@
   --star-active-size: 5px;
 }
 
+@supports (-webkit-touch-callout: none) {
+  .clients-section,
+  .client-logo-showcase {
+    overflow: hidden;
+  }
+}
+
 .client-feature-screen {
   position: absolute;
   top: 18.2%;
