@@ -1,4 +1,4 @@
-﻿@media (max-width: 760px) {
+@media (max-width: 760px) {
   .topbar {
     min-height: calc(68px + env(safe-area-inset-top));
     padding-inline: 16px;
@@ -388,51 +388,56 @@
     margin-top: 12px;
   }
 
-  .contact-section .primary-action {
-    min-height: 50px;
-    font-size: 0.74rem;
-  }
 
   .contact-menu {
-    width: 100%;
-    height: auto;
-    place-items: stretch;
+    width: 90px;
+    height: 90px;
+    place-items: center;
+    align-self: center;
+    justify-self: center;
+    margin-top: 64px;
+    margin-bottom: 64px;
   }
 
   .contact-menu summary {
-    display: inline-flex;
-    width: 100%;
-    height: 54px;
-    justify-content: center;
-    border-radius: 8px;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+  }
+
+  .contact-menu summary svg {
+    width: 26px;
+    height: 26px;
   }
 
   .contact-menu-items {
-    position: static;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    margin-top: 12px;
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
     pointer-events: none;
   }
 
-  .contact-menu-items a,
-  .contact-menu[open] .contact-menu-items a:nth-child(n) {
-    position: static;
-    width: 100%;
-    height: 58px;
-    flex-direction: row;
-    border-radius: 8px;
+  .contact-menu-items a {
+    --distance: 82px;
+    position: absolute;
+    width: 52px;
+    height: 52px;
     opacity: 0;
-    transform: translateY(-8px) scale(0.98);
+    pointer-events: none;
+    transform: rotate(var(--angle)) translateY(0) rotate(var(--return-angle)) scale(0.28);
   }
 
-  .contact-menu[open] .contact-menu-items a:nth-child(n) {
+  .contact-menu-items a svg,
+  .contact-menu-items a img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .contact-menu[open] .contact-menu-items a {
     opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-
-  .contact-menu[open] .contact-menu-items a:last-child {
-    grid-column: 1 / -1;
+    pointer-events: auto;
+    transform: rotate(var(--angle)) translateY(calc(var(--distance) * -1)) rotate(var(--return-angle)) scale(1);
   }
 }
 
