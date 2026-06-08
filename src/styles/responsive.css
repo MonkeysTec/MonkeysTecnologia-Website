@@ -376,6 +376,8 @@
   }
 
   .contact-section {
+    width: min(100% - 36px, 402px);
+    max-width: 402px;
     margin-bottom: calc(54px + env(safe-area-inset-bottom));
     padding: 20px;
   }
@@ -395,8 +397,8 @@
     place-items: center;
     align-self: center;
     justify-self: center;
-    margin-top: 64px;
-    margin-bottom: 64px;
+    margin-top: 23px;
+    margin-bottom: 34px;
   }
 
   .contact-menu summary {

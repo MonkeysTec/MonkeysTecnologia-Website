@@ -1,8 +1,8 @@
 ﻿.contact-section {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+  grid-template-columns: minmax(0, 1fr) minmax(160px, 220px);
   align-items: center;
-  gap: 34px;
+  gap: 22px;
   margin-bottom: 34px;
   padding: 38px;
   border: 1px solid rgba(255, 106, 0, 0.32);
@@ -11,7 +11,14 @@
     linear-gradient(135deg, rgba(255, 106, 0, 0.2), rgba(255, 255, 255, 0.04)),
     #080808;
   box-shadow: 0 0 70px rgba(255, 106, 0, 0.12);
-  max-width: calc(100% - 40px);
+  width: min(1120px, calc(100% - 80px));
+  max-width: none;
+}
+
+@media (min-width: 1240px) {
+  .contact-section {
+    left: clamp(0px, calc(0.9vw - 8px), 12px);
+  }
 }
 
 .page-end-spacer {
@@ -35,7 +42,7 @@
 .contact-menu {
   position: relative;
   align-self: center;
-  justify-self: center;
+  justify-self: start;
   width: 112px;
   height: 112px;
   display: grid;

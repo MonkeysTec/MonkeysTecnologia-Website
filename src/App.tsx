@@ -24,6 +24,9 @@ function App() {
       <ProcessSection />
       <ClientsSection />
       <ContactSection />
+      <footer className="site-footer">
+        © 2025 MonkeysTecnologia. All rights reserved.
+      </footer>
       <div className="page-end-spacer" aria-hidden="true" />
     </main>
   )
