@@ -3,22 +3,11 @@ import type { CSSProperties } from 'react'
 import { clientLogos } from '../data/siteContent'
 
 const monkeyConstellation = new URL('../assets/monkey-teladupla.png', import.meta.url).href
-const monkeyOff = new URL('../assets/monkey-off.png', import.meta.url).href
+const logoStepDuration = 1600
 
 export function ClientsSection() {
-  const [isOpen, setIsOpen] = useState(false)
   const [focusedLogo, setFocusedLogo] = useState<number | null>(null)
   const [sequenceKey, setSequenceKey] = useState(0)
-
-  function openConstellation() {
-    setIsOpen(true)
-    setSequenceKey((key) => key + 1)
-  }
-
-  function closeConstellation() {
-    setIsOpen(false)
-    setFocusedLogo(null)
-  }
 
   function resetLogoSequence() {
     setFocusedLogo(null)
@@ -51,23 +40,12 @@ export function ClientsSection() {
 
   return (
     <section className="clients-section reveal" id="clientes">
+      <h2 className="clients-title">Nossos Clientes</h2>
       <div
-        className={`client-logo-showcase${isOpen ? ' is-open' : ''}${focusedLogo !== null ? ' has-focused-logo' : ''}`}
-        style={{ '--logo-sequence-duration': `${Math.ceil(clientLogos.length / 2) * 900}ms` } as CSSProperties}
-        onMouseLeave={closeConstellation}
+        className={`client-logo-showcase is-open${focusedLogo !== null ? ' has-focused-logo' : ''}`}
+        style={{ '--logo-sequence-duration': `${Math.ceil(clientLogos.length / 2) * logoStepDuration}ms` } as CSSProperties}
+        onMouseLeave={resetLogoSequence}
       >
-        <img
-          className="client-off-scene"
-          src={monkeyOff}
-          alt=""
-          aria-hidden="true"
-        />
-        <img
-          className="client-off-focus"
-          src={monkeyOff}
-          alt=""
-          aria-hidden="true"
-        />
         <img
           className="client-constellation-scene"
           src={monkeyConstellation}
@@ -79,7 +57,7 @@ export function ClientsSection() {
             <div
               className={`client-logo-card${focusedLogo === index ? ' is-focused' : ''}`}
               key={image}
-              style={{ '--logo-delay': `${Math.floor(index / 2) * 900}ms` } as CSSProperties}
+              style={{ '--logo-delay': `${Math.floor(index / 2) * logoStepDuration}ms` } as CSSProperties}
               tabIndex={0}
               aria-label={`Destacar ${label}`}
               onMouseEnter={() => setFocusedLogo(index)}
@@ -105,20 +83,12 @@ export function ClientsSection() {
                   src={image}
                   alt=""
                   key={`${label}-${image}`}
-                  style={{ '--logo-delay': `${Math.floor(index / 2) * 900}ms` } as CSSProperties}
+                  style={{ '--logo-delay': `${Math.floor(index / 2) * logoStepDuration}ms` } as CSSProperties}
                 />
               )
             })}
           </div>
         ))}
-        {!isOpen && (
-          <button
-            className="client-open-trigger"
-            type="button"
-            aria-label="Revelar constelação de clientes"
-            onClick={openConstellation}
-          />
-        )}
       </div>
     </section>
   )
