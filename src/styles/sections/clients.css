@@ -27,7 +27,7 @@
 
 .client-logo-showcase {
   position: relative;
-  left: 2.5%;
+  left: 4.25%;
   display: flex;
   width: min(1260px, calc(100vw - 40px));
   margin-inline: auto;
