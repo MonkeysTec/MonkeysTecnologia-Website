@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Plus, X, Zap } from 'lucide-react'
+import { Plus, UsersRound, X } from 'lucide-react'
 import alyssonPhoto from '../assets/imgalys.jpeg'
 import alyssonSignature from '../assets/alyssysign.png'
 import maxwellPhoto from '../assets/imgpnd.jpeg'
@@ -27,20 +27,30 @@ export function ContactSection() {
 
   return (
     <>
-      <section className="contact-section" id="contato">
-        <div>
+      <section className="contact-section" id="sobre-nos">
+        <div className="about-copy">
           <span className="section-kicker">
-            <Zap size={18} />
-            Próximo passo
+            <UsersRound size={18} />
+            Sobre nós
           </span>
-          <h2>Vamos criar a sua tecnologia?</h2>
+          <h2>Equipe para criar software sob medida.</h2>
           <p>
-            Conte o que você precisa construir, automatizar ou melhorar. A gente
-            organiza o caminho mais direto para chegar lá.
+            Somos uma empresa de desenvolvimento de software dedicada a simplificar o ciclo de vida de aplicações web,
+            mobile e baseadas em APIs. Nossa equipe de especialistas inclui desenvolvedores front-end e back-end,
+            engenheiros mobile, gerentes de produto, designers de produto, especialistas em UI/UX, scrum masters,
+            engenheiros de DevOps, analistas de dados e líderes técnicos, todos trabalhando juntos para entregar
+            soluções digitais personalizadas.
+          </p>
+          <p>
+            Dedicamos tempo para compreender verdadeiramente os desafios de nossos clientes, transformando-os em
+            resultados práticos, rápidos e eficazes. Com uma abordagem flexível e colaborativa, os clientes podem moldar
+            ativamente o foco do desenvolvimento a cada semana, seja alocando 100% da equipe para design em uma semana
+            e, na seguinte, 70% para back-end e 30% para front-end. Esse modelo garante transparência, adaptabilidade e
+            total alinhamento com as prioridades em constante evolução de cada cliente.
           </p>
         </div>
         <details className="contact-menu">
-          <summary aria-label="Abrir perfis dos fundadores">
+          <summary aria-label="Abrir perfis da equipe">
             <Plus size={34} strokeWidth={2.8} />
           </summary>
           <div className="contact-menu-items">

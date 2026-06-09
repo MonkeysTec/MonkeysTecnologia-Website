@@ -9,7 +9,7 @@ const navItems = [
   { href: '#caminhos', label: 'Caminhos' },
   { href: '#processo', label: 'Processo' },
   { href: '#clientes', label: 'Clientes' },
-  { href: '#contato', label: 'Contato' },
+  { href: '#sobre-nos', label: 'Sobre nós' },
 ]
 
 function scrollToSection(href: string) {
