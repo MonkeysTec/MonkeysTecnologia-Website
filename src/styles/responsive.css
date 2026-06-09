@@ -360,6 +360,7 @@
   }
 
   .client-logo-showcase {
+    left: 16px;
     width: 100%;
     height: auto;
     padding: 0;
