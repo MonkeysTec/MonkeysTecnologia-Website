@@ -232,6 +232,37 @@
   transform: scale(1.08);
 }
 
+.service-card {
+  border-color: rgba(255, 106, 0, 0.4);
+  background:
+    radial-gradient(circle at 17% 17%, rgba(255, 106, 0, 0.16), transparent 34%),
+    linear-gradient(180deg, rgba(255, 106, 0, 0.1), transparent 58%),
+    rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 28px 58px rgba(0, 0, 0, 0.28),
+    0 0 36px rgba(255, 106, 0, 0.08),
+    inset 0 -4px 12px rgba(255, 255, 255, 0.045);
+}
+
+.service-card .card-icon {
+  border-color: rgba(255, 106, 0, 0.62);
+  background: rgba(255, 106, 0, 0.14);
+  box-shadow:
+    0 0 28px rgba(255, 106, 0, 0.34),
+    inset 0 0 22px rgba(255, 106, 0, 0.1);
+  animation: none;
+  transform: translateY(-3px) scale(1.06);
+}
+
+.service-card .card-icon::before {
+  animation: iconSweep 1500ms ease-in-out infinite;
+}
+
+.service-card .card-icon svg {
+  filter: drop-shadow(0 0 8px rgba(255, 106, 0, 0.64));
+  transform: scale(1.08);
+}
+
 .service-preview {
   display: grid;
   align-items: end;
@@ -334,11 +365,15 @@
   background: linear-gradient(90deg, var(--orange), rgba(255, 138, 31, 0.35));
 }
 
+.service-card-web .preview-web span:first-child,
 .service-card-web:hover .preview-web span:first-child,
 .service-card-web:focus-within .preview-web span:first-child {
   animation: webPanelBuild 1800ms ease-in-out infinite;
 }
 
+.service-card-web .preview-web span:nth-child(2),
+.service-card-web .preview-web span:nth-child(3),
+.service-card-web .preview-web strong,
 .service-card-web:hover .preview-web span:nth-child(2),
 .service-card-web:hover .preview-web span:nth-child(3),
 .service-card-web:hover .preview-web strong,
@@ -349,11 +384,13 @@
   animation: webLineBuild 1800ms ease-in-out infinite;
 }
 
+.service-card-web .preview-web span:nth-child(3),
 .service-card-web:hover .preview-web span:nth-child(3),
 .service-card-web:focus-within .preview-web span:nth-child(3) {
   animation-delay: 180ms;
 }
 
+.service-card-web .preview-web strong,
 .service-card-web:hover .preview-web strong,
 .service-card-web:focus-within .preview-web strong {
   animation-delay: 360ms;
@@ -435,6 +472,7 @@
   transform: translateY(-110%);
 }
 
+.service-card-automation .card-icon,
 .service-card-automation:hover .card-icon,
 .service-card-automation:focus-within .card-icon {
   box-shadow:
@@ -442,33 +480,40 @@
     inset 0 0 20px rgba(255, 106, 0, 0.08);
 }
 
+.service-card-automation .card-icon svg,
 .service-card-automation:hover .card-icon svg,
 .service-card-automation:focus-within .card-icon svg {
   animation: agentFocus 1200ms ease-in-out infinite;
 }
 
+.service-card-automation .card-icon::after,
 .service-card-automation:hover .card-icon::after,
 .service-card-automation:focus-within .card-icon::after {
   animation: agentScan 1300ms ease-in-out infinite;
   opacity: 1;
 }
 
+.service-card-automation .preview-automation span,
 .service-card-automation:hover .preview-automation span,
 .service-card-automation:focus-within .preview-automation span {
   background: rgba(255, 106, 0, 0.2);
   animation: automationNodeFill 2600ms ease-in-out infinite;
 }
 
+.service-card-automation .preview-automation span::after,
 .service-card-automation:hover .preview-automation span::after,
 .service-card-automation:focus-within .preview-automation span::after {
   animation: automationStepLabel 2600ms ease-in-out infinite;
 }
 
+.service-card-automation .preview-automation i::after,
 .service-card-automation:hover .preview-automation i::after,
 .service-card-automation:focus-within .preview-automation i::after {
   animation: automationLineFill 2600ms ease-in-out infinite;
 }
 
+.service-card-automation .preview-automation span:nth-of-type(2),
+.service-card-automation .preview-automation span:nth-of-type(2)::after,
 .service-card-automation:hover .preview-automation span:nth-of-type(2),
 .service-card-automation:hover .preview-automation span:nth-of-type(2)::after,
 .service-card-automation:focus-within .preview-automation span:nth-of-type(2),
@@ -476,6 +521,8 @@
   animation-delay: 520ms;
 }
 
+.service-card-automation .preview-automation span:nth-of-type(3),
+.service-card-automation .preview-automation span:nth-of-type(3)::after,
 .service-card-automation:hover .preview-automation span:nth-of-type(3),
 .service-card-automation:hover .preview-automation span:nth-of-type(3)::after,
 .service-card-automation:focus-within .preview-automation span:nth-of-type(3),
@@ -483,11 +530,13 @@
   animation-delay: 1040ms;
 }
 
+.service-card-automation .preview-automation i:nth-of-type(1)::after,
 .service-card-automation:hover .preview-automation i:nth-of-type(1)::after,
 .service-card-automation:focus-within .preview-automation i:nth-of-type(1)::after {
   animation-delay: 260ms;
 }
 
+.service-card-automation .preview-automation i:nth-of-type(2)::after,
 .service-card-automation:hover .preview-automation i:nth-of-type(2)::after,
 .service-card-automation:focus-within .preview-automation i:nth-of-type(2)::after {
   animation-delay: 780ms;
@@ -701,16 +750,20 @@
   height: 58px;
 }
 
+.service-card-data .preview-data span,
 .service-card-data:hover .preview-data span,
 .service-card-data:focus-within .preview-data span {
   animation: dataBarMeasure 2200ms ease-in-out infinite;
 }
 
+.service-card-data .preview-data span::after,
 .service-card-data:hover .preview-data span::after,
 .service-card-data:focus-within .preview-data span::after {
   animation: dataValuePop 2200ms ease-in-out infinite;
 }
 
+.service-card-data .preview-data span:nth-child(2),
+.service-card-data .preview-data span:nth-child(2)::after,
 .service-card-data:hover .preview-data span:nth-child(2),
 .service-card-data:hover .preview-data span:nth-child(2)::after,
 .service-card-data:focus-within .preview-data span:nth-child(2),
@@ -718,6 +771,8 @@
   animation-delay: 180ms;
 }
 
+.service-card-data .preview-data span:nth-child(3),
+.service-card-data .preview-data span:nth-child(3)::after,
 .service-card-data:hover .preview-data span:nth-child(3),
 .service-card-data:hover .preview-data span:nth-child(3)::after,
 .service-card-data:focus-within .preview-data span:nth-child(3),
@@ -725,6 +780,8 @@
   animation-delay: 360ms;
 }
 
+.service-card-data .preview-data span:nth-child(4),
+.service-card-data .preview-data span:nth-child(4)::after,
 .service-card-data:hover .preview-data span:nth-child(4),
 .service-card-data:hover .preview-data span:nth-child(4)::after,
 .service-card-data:focus-within .preview-data span:nth-child(4),
@@ -772,21 +829,27 @@
   transform: translateX(-6px);
 }
 
+.service-card-support .preview-support span,
 .service-card-support:hover .preview-support span,
 .service-card-support:focus-within .preview-support span {
   animation: supportLineConfirm 2200ms ease-in-out infinite;
 }
 
+.service-card-support .preview-support span::before,
 .service-card-support:hover .preview-support span::before,
 .service-card-support:focus-within .preview-support span::before {
   animation: supportDotConfirm 2200ms ease-in-out infinite;
 }
 
+.service-card-support .preview-support span::after,
 .service-card-support:hover .preview-support span::after,
 .service-card-support:focus-within .preview-support span::after {
   animation: supportLabelReveal 2200ms ease-in-out infinite;
 }
 
+.service-card-support .preview-support span:nth-child(2),
+.service-card-support .preview-support span:nth-child(2)::before,
+.service-card-support .preview-support span:nth-child(2)::after,
 .service-card-support:hover .preview-support span:nth-child(2),
 .service-card-support:hover .preview-support span:nth-child(2)::before,
 .service-card-support:hover .preview-support span:nth-child(2)::after,
@@ -796,6 +859,9 @@
   animation-delay: 360ms;
 }
 
+.service-card-support .preview-support span:nth-child(3),
+.service-card-support .preview-support span:nth-child(3)::before,
+.service-card-support .preview-support span:nth-child(3)::after,
 .service-card-support:hover .preview-support span:nth-child(3),
 .service-card-support:hover .preview-support span:nth-child(3)::before,
 .service-card-support:hover .preview-support span:nth-child(3)::after,
