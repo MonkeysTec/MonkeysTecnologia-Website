@@ -26,7 +26,7 @@ function App() {
       <ClientsSection />
       <ContactSection />
       <footer className="site-footer">
-        <p>&copy; 2025 MonkeysTecnologia. All rights reserved.</p>
+        <p>&copy; 2026 MonkeysTecnologia. All rights reserved.</p>
         <div className="site-footer-socials" aria-label="Redes sociais">
           {contactOptions.map(({ icon: Icon, image, label, href }) => (
             <a
