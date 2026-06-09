@@ -407,14 +407,19 @@
   }
 
 
-  .contact-menu {
+  .contact-menu-wrap {
     width: 96px;
-    height: 96px;
+    height: 240px;
     place-items: center;
     align-self: center;
     justify-self: center;
     margin-top: 10px;
     margin-bottom: 34px;
+  }
+
+  .contact-menu {
+    width: 96px;
+    height: 96px;
   }
 
   .contact-menu summary {
@@ -460,21 +465,21 @@
     height: 100%;
   }
 
-  .contact-menu[open] .contact-menu-items a,
-  .contact-menu[open] .contact-menu-items button {
+  .contact-menu-items.is-open a,
+  .contact-menu-items.is-open button {
     opacity: 1;
     pointer-events: auto;
     transform: none;
   }
 
-  .contact-menu[open] .contact-menu-items a:nth-child(1),
-  .contact-menu[open] .contact-menu-items button:nth-child(1) {
+  .contact-menu-items.is-open a:nth-child(1),
+  .contact-menu-items.is-open button:nth-child(1) {
     --item-left: calc(50% + 64px);
     --item-top: calc(50% - 76px);
   }
 
-  .contact-menu[open] .contact-menu-items a:nth-child(2),
-  .contact-menu[open] .contact-menu-items button:nth-child(2) {
+  .contact-menu-items.is-open a:nth-child(2),
+  .contact-menu-items.is-open button:nth-child(2) {
     --item-left: calc(50% + 64px);
     --item-top: calc(50% + 76px);
   }

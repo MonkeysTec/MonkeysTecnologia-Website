@@ -44,11 +44,21 @@
   overflow-wrap: anywhere;
 }
 
-.contact-menu {
+.contact-menu-wrap {
   position: relative;
   align-self: center;
   justify-self: start;
   z-index: 2;
+  display: grid;
+  width: 260px;
+  height: 430px;
+  place-items: center;
+  overflow: visible;
+}
+
+.contact-menu {
+  position: relative;
+  z-index: 4;
   width: 88px;
   height: 88px;
   display: grid;
@@ -184,13 +194,13 @@
   image-rendering: auto;
 }
 
-.contact-menu[open] .contact-menu-items {
+.contact-menu-items.is-open {
   z-index: 8;
   pointer-events: none;
 }
 
-.contact-menu[open] .contact-menu-items a,
-.contact-menu[open] .contact-menu-items button {
+.contact-menu-items.is-open a,
+.contact-menu-items.is-open button {
   top: var(--item-top);
   left: var(--item-left);
   z-index: 9;
@@ -199,27 +209,27 @@
   transform: none;
 }
 
-.contact-menu[open] .contact-menu-items a:nth-child(1),
-.contact-menu[open] .contact-menu-items button:nth-child(1) {
+.contact-menu-items.is-open a:nth-child(1),
+.contact-menu-items.is-open button:nth-child(1) {
   --item-left: calc(50% + 84px);
   --item-top: calc(50% - 128px);
   transition-delay: 20ms;
 }
 
-.contact-menu[open] .contact-menu-items a:nth-child(2),
-.contact-menu[open] .contact-menu-items button:nth-child(2) {
+.contact-menu-items.is-open a:nth-child(2),
+.contact-menu-items.is-open button:nth-child(2) {
   --item-left: calc(50% + 84px);
   --item-top: calc(50% + 128px);
   transition-delay: 70ms;
 }
 
-.contact-menu[open] .contact-menu-items a:nth-child(3) {
+.contact-menu-items.is-open a:nth-child(3) {
   --angle: 80deg;
   --return-angle: -80deg;
   transition-delay: 120ms;
 }
 
-.contact-menu[open] .contact-menu-items a:nth-child(4) {
+.contact-menu-items.is-open a:nth-child(4) {
   --angle: 180deg;
   --return-angle: -180deg;
   transition-delay: 170ms;
