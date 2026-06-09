@@ -7,14 +7,14 @@
   min-height: calc(100svh - 78px);
   margin: 0 auto;
   padding: 46px 0 58px;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .hero-media {
   position: absolute;
   inset-block: 10px 20px;
   left: clamp(320px, 36%, 430px);
-  right: calc((100vw - 100%) / -2);
+  right: 0;
   z-index: -1;
   overflow: hidden;
 }
