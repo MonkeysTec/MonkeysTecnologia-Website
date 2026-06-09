@@ -75,9 +75,9 @@
   }
 
   .hero-media {
-    inset: 0 0 auto 12%;
+    inset: 0 0 auto;
     height: 560px;
-    opacity: 0.66;
+    opacity: 0.86;
   }
 
   .hero-content {
@@ -110,6 +110,10 @@
   .clients-section,
   .contact-section {
     grid-template-columns: 1fr;
+  }
+
+  .contact-section {
+    margin-top: -64px;
   }
 
   .client-logo-showcase {
@@ -210,12 +214,12 @@
     inset: 0 0 auto;
     width: 100%;
     height: 500px;
-    opacity: 0.54;
+    opacity: 0.72;
   }
 
   .hero-media::before {
     background:
-      linear-gradient(90deg, #050505 0%, rgba(5, 5, 5, 0.74) 45%, rgba(5, 5, 5, 0.28)),
+      linear-gradient(90deg, rgba(5, 5, 5, 0.58) 0%, rgba(5, 5, 5, 0.42) 45%, rgba(5, 5, 5, 0.2)),
       linear-gradient(180deg, rgba(5, 5, 5, 0.08), #050505 92%);
   }
 
@@ -299,6 +303,10 @@
     margin-bottom: 24px;
   }
 
+  .compact-heading p {
+    margin-top: 0;
+  }
+
   .section-heading h2,
   .process-copy h2,
   .contact-section h2 {
@@ -379,7 +387,8 @@
   .contact-section {
     width: min(100% - 36px, 402px);
     max-width: 402px;
-    margin-bottom: calc(54px + env(safe-area-inset-bottom));
+    margin-top: -28px;
+    margin-bottom: calc(20px + env(safe-area-inset-bottom));
     padding: 20px;
   }
 
@@ -421,7 +430,7 @@
 
   .contact-menu-items {
     position: absolute;
-    inset: 0;
+    inset: -116px -108px;
     display: grid;
     place-items: center;
     pointer-events: none;
@@ -429,13 +438,13 @@
 
   .contact-menu-items a,
   .contact-menu-items button {
-    --distance: 92px;
+    --trigger-offset: -36px;
     position: absolute;
     width: 72px;
     height: 72px;
     opacity: 0;
     pointer-events: none;
-    transform: rotate(var(--angle)) translateY(0) rotate(var(--return-angle)) scale(0.28);
+    transform: scale(0.28);
   }
 
   .contact-menu-items a svg,
@@ -455,7 +464,19 @@
   .contact-menu[open] .contact-menu-items button {
     opacity: 1;
     pointer-events: auto;
-    transform: rotate(var(--angle)) translateY(calc(var(--distance) * -1)) rotate(var(--return-angle)) scale(1);
+    transform: none;
+  }
+
+  .contact-menu[open] .contact-menu-items a:nth-child(1),
+  .contact-menu[open] .contact-menu-items button:nth-child(1) {
+    --item-left: calc(50% + 64px);
+    --item-top: calc(50% - 76px);
+  }
+
+  .contact-menu[open] .contact-menu-items a:nth-child(2),
+  .contact-menu[open] .contact-menu-items button:nth-child(2) {
+    --item-left: calc(50% + 64px);
+    --item-top: calc(50% + 76px);
   }
 
   .founder-modal-backdrop {
@@ -545,7 +566,4 @@
     font-size: 0.68rem;
   }
 
-  .page-end-spacer {
-    height: max(86px, env(safe-area-inset-bottom));
-  }
 }

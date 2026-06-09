@@ -1,6 +1,6 @@
 import { ArrowRight, Sparkles } from 'lucide-react'
 import { createWhatsAppLink, heroRotatingWords } from '../data/siteContent'
-import heroImage from '../assets/monkeys-hero.png'
+import heroImage from '../assets/monkeys-hero2.png'
 
 export function HeroSection() {
   return (

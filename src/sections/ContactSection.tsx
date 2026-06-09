@@ -2,14 +2,17 @@ import { useState } from 'react'
 import { Plus, UsersRound, X } from 'lucide-react'
 import alyssonPhoto from '../assets/imgalys.jpeg'
 import alyssonSignature from '../assets/alyssysign.png'
-import maxwellPhoto from '../assets/imgpnd.jpeg'
+import alyssonThumbnail from '../assets/thumbalyssu2.jpeg'
+import maxwellPhoto from '../assets/imagemax.png'
 import maxwellSignature from '../assets/maxsign.png'
+import maxwellThumbnail from '../assets/thumbmax.png'
 
 const founders = [
   {
     name: 'Maxwell Siqueira',
     signatureClassName: 'founder-signature--maxwell',
     photo: maxwellPhoto,
+    thumbnail: maxwellThumbnail,
     signature: maxwellSignature,
     bio: 'Entusiasta de tecnologia de 34 anos e desenvolvedor de software experiente, com mais de 14 anos de experiência na criação de soluções digitais em diversas plataformas. Fundador da Monkeys Tecnologia no Brasil e atualmente à frente da doneThink, uma empresa de tecnologia inovadora com sede na Estônia. Com profundo conhecimento em desenvolvimento full-stack e design de produto, o CEO também atuou como líder técnico e gerente de engenharia, guiando com sucesso equipes multifuncionais em desafios complexos. Sua experiência inclui trabalho prático com sistemas embarcados, aplicativos móveis e plataformas web, sempre combinando excelência técnica com uma mentalidade orientada a produto. Impulsionado pela inovação e simplicidade, ele se dedica a transformar problemas complexos em soluções elegantes, escaláveis e impactantes.',
   },
@@ -17,6 +20,7 @@ const founders = [
     name: 'Alysson Sene',
     signatureClassName: 'founder-signature--alysson',
     photo: alyssonPhoto,
+    thumbnail: alyssonThumbnail,
     signature: alyssonSignature,
     bio: 'Cofundador da doneThink e desenvolvedor de software com sólida experiência na criação de soluções digitais focadas em aprimorar a experiência do usuário. Desde 2018, atua na área de tecnologia, com forte presença em ambientes ágeis, dinâmicos e colaborativos. Aos 30 anos, combina atenção aos detalhes, senso estético e visão estratégica com as melhores práticas de desenvolvimento para entregar produtos funcionais, escaláveis e bem projetados. Ambiciona alcançar posições de liderança técnica, contribuindo para o desenvolvimento de novos talentos e ajudando a construir soluções escaláveis, elegantes e com propósito.',
   },
@@ -24,6 +28,7 @@ const founders = [
 
 export function ContactSection() {
   const [selectedFounder, setSelectedFounder] = useState<(typeof founders)[number] | null>(null)
+  const [isTeamMenuOpen, setIsTeamMenuOpen] = useState(false)
 
   return (
     <>
@@ -40,19 +45,26 @@ export function ContactSection() {
             processos ágeis, transparentes e adaptáveis às necessidades de cada cliente.
           </p>
         </div>
-        <details className="contact-menu">
-          <summary aria-label="Abrir perfis da equipe">
-            <Plus size={24} strokeWidth={2.4} />
-          </summary>
-          <div className="contact-menu-items">
+        <div className="contact-menu-wrap">
+          <details className="contact-menu" onToggle={(event) => setIsTeamMenuOpen(event.currentTarget.open)}>
+            <summary aria-label="Abrir perfis da equipe">
+              <Plus size={24} strokeWidth={2.4} />
+            </summary>
+          </details>
+          <div className={`contact-menu-items${isTeamMenuOpen ? ' is-open' : ''}`} aria-hidden={!isTeamMenuOpen}>
             {founders.map((founder) => (
-              <button type="button" key={founder.name} onClick={() => setSelectedFounder(founder)}>
-                <img src={founder.photo} alt="" aria-hidden="true" />
+              <button
+                className={`founder-trigger ${founder.signatureClassName.replace('founder-signature', 'founder-trigger')}`}
+                type="button"
+                key={founder.name}
+                onClick={() => setSelectedFounder(founder)}
+              >
+                <img src={founder.thumbnail} alt="" aria-hidden="true" />
                 <span className="sr-only">Ver apresentação de {founder.name}</span>
               </button>
             ))}
           </div>
-        </details>
+        </div>
       </section>
 
       {selectedFounder ? (

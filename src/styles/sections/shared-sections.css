@@ -27,6 +27,11 @@
   align-items: start;
 }
 
+.compact-heading p {
+  align-self: start;
+  margin-top: clamp(132px, 11vw, 178px);
+}
+
 .section-heading h2,
 .process-copy h2,
 .contact-section h2 {

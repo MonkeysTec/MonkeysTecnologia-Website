@@ -41,7 +41,6 @@ function App() {
           ))}
         </div>
       </footer>
-      <div className="page-end-spacer" aria-hidden="true" />
     </main>
   )
 }
