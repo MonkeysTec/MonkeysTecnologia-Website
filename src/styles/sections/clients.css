@@ -128,12 +128,7 @@
 }
 
 .client-logo-showcase::after {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  content: '';
-  background: radial-gradient(circle at 50% 45%, transparent 42%, rgba(5, 5, 5, 0.16) 72%);
+  display: none;
 }
 
 .client-logo-showcase::before {
