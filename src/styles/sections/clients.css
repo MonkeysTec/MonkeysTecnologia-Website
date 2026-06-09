@@ -12,7 +12,7 @@
   box-shadow: none;
   width: min(100%, 100vw);
   max-width: none;
-  overflow: visible;
+  overflow: clip;
 }
 
 .clients-title {

@@ -3,13 +3,14 @@ import { Plus, UsersRound, X } from 'lucide-react'
 import alyssonPhoto from '../assets/imgalys.jpeg'
 import alyssonSignature from '../assets/alyssysign.png'
 import alyssonThumbnail from '../assets/thumbalyssu2.jpeg'
-import maxwellPhoto from '../assets/imagemax.png'
+import maxwellPhoto from '../assets/imgpnd.jpeg'
 import maxwellSignature from '../assets/maxsign.png'
 import maxwellThumbnail from '../assets/thumbmax.png'
 
 const founders = [
   {
     name: 'Maxwell Siqueira',
+    role: 'Fundador',
     signatureClassName: 'founder-signature--maxwell',
     photo: maxwellPhoto,
     thumbnail: maxwellThumbnail,
@@ -18,6 +19,7 @@ const founders = [
   },
   {
     name: 'Alysson Sene',
+    role: 'Cofundador',
     signatureClassName: 'founder-signature--alysson',
     photo: alyssonPhoto,
     thumbnail: alyssonThumbnail,
@@ -88,8 +90,9 @@ export function ContactSection() {
             <div className="founder-modal-copy">
               <p>{selectedFounder.bio}</p>
               <div className={`founder-signature ${selectedFounder.signatureClassName}`}>
-                <h3 id="founder-modal-title">{selectedFounder.name}</h3>
                 <img src={selectedFounder.signature} alt={`Assinatura de ${selectedFounder.name}`} />
+                <h3 id="founder-modal-title">{selectedFounder.name}</h3>
+                <span>{selectedFounder.role}</span>
               </div>
             </div>
           </section>

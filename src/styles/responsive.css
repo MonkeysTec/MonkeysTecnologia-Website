@@ -408,7 +408,7 @@
 
 
   .contact-menu-wrap {
-    width: 96px;
+    width: 180px;
     height: 240px;
     place-items: center;
     align-self: center;
@@ -435,7 +435,7 @@
 
   .contact-menu-items {
     position: absolute;
-    inset: -116px -108px;
+    inset: 0;
     display: grid;
     place-items: center;
     pointer-events: none;

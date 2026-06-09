@@ -50,7 +50,7 @@
   justify-self: start;
   z-index: 2;
   display: grid;
-  width: 260px;
+  width: 300px;
   height: 430px;
   place-items: center;
   overflow: visible;
@@ -114,7 +114,7 @@
 
 .contact-menu-items {
   position: absolute;
-  inset: -190px -180px;
+  inset: 0;
   z-index: 1;
   display: grid;
   place-items: center;
@@ -315,7 +315,7 @@
 .founder-signature {
   position: relative;
   display: grid;
-  gap: 0;
+  gap: 4px;
   margin-top: 26px;
   width: min(280px, 72%);
   isolation: isolate;
@@ -325,6 +325,14 @@
 .founder-signature h3 {
   position: relative;
   z-index: 1;
+  margin-top: 0;
+}
+
+.founder-signature span {
+  color: var(--text);
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .founder-signature img {
@@ -335,7 +343,7 @@
   height: 96px;
   object-fit: cover;
   object-position: left 50%;
-  margin-top: -8px;
+  margin-bottom: -4px;
   transform: translateX(-10px);
   filter: drop-shadow(0 0 12px rgba(255, 106, 0, 0.16));
 }
