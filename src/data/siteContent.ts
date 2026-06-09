@@ -4,14 +4,14 @@ import {
   Code2,
   DatabaseZap,
   Layers3,
-  Mail,
   Rocket,
   ShieldCheck,
   UsersRound,
 } from 'lucide-react'
-import instaLogo from '../assets/logo insta.png'
-import linkedinLogo from '../assets/logo linkedin.png'
-import whatsLogo from '../assets/logo whats.png'
+import emailLogo from '../assets/simbolo-email.png'
+import instaLogo from '../assets/simbolo-insta.png'
+import linkedinLogo from '../assets/simbolo-linkedin.png'
+import whatsLogo from '../assets/simbolo-whats.png'
 import type { ClientLogo, ContactOption, EntryPath, IconContent, ServiceContent } from '../types'
 
 const whatsappPhone = '553597330160'
@@ -149,7 +149,7 @@ export const entryPaths: EntryPath[] = [
   },
 ]
 
-export const rotatingNeeds = ['site', 'sistema', 'dashboard', 'app', 'portal']
+export const rotatingNeeds = ['Site?', 'Sistema?', 'Dashboard?', 'App?', 'Portal?']
 export const heroRotatingWords = ['complicação.', 'enrolação.', 'dificuldade.', 'mistério.']
 export const processSteps = ['Entender', 'Simplificar', 'Construir', 'Evoluir']
 
@@ -165,7 +165,7 @@ export const contactOptions: ContactOption[] = [
     href: 'https://instagram.com/monkeystecnologia',
   },
   {
-    icon: Mail,
+    image: emailLogo,
     label: 'Email',
     href: 'mailto:contato@monkeystecnologia.com',
   },

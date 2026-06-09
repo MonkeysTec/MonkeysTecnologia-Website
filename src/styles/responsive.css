@@ -323,13 +323,8 @@
   }
 
   .need-rotator strong {
-    width: 8.8ch;
+    width: 10.8ch;
     height: 1.12em;
-  }
-
-  .need-question {
-    display: inline;
-    margin-left: -0.2em;
   }
 
   .service-card {
@@ -404,24 +399,24 @@
 
 
   .contact-menu {
-    width: 90px;
-    height: 90px;
+    width: 96px;
+    height: 96px;
     place-items: center;
     align-self: center;
     justify-self: center;
     margin-top: 10px;
-    margin-bottom: 16px;
+    margin-bottom: 34px;
   }
 
   .contact-menu summary {
-    width: 72px;
-    height: 72px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
   }
 
   .contact-menu summary svg {
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
   }
 
   .contact-menu-items {
@@ -434,10 +429,10 @@
 
   .contact-menu-items a,
   .contact-menu-items button {
-    --distance: 82px;
+    --distance: 92px;
     position: absolute;
-    width: 52px;
-    height: 52px;
+    width: 72px;
+    height: 72px;
     opacity: 0;
     pointer-events: none;
     transform: rotate(var(--angle)) translateY(0) rotate(var(--return-angle)) scale(0.28);
@@ -447,8 +442,8 @@
   .contact-menu-items a img,
   .contact-menu-items button svg,
   .contact-menu-items button img {
-    width: 42px;
-    height: 42px;
+    width: 64px;
+    height: 64px;
   }
 
   .contact-menu-items button img {

@@ -63,7 +63,7 @@
 }
 
 .site-footer-socials a {
-  --footer-icon-size: 32px;
+  --footer-icon-size: 34px;
 
   display: inline-flex;
   width: 42px;
@@ -88,13 +88,4 @@
   width: var(--footer-icon-size);
   height: var(--footer-icon-size);
   object-fit: contain;
-}
-
-.site-footer-socials a[aria-label='Whats'],
-.site-footer-socials a[aria-label='LinkedIn'] {
-  --footer-icon-size: 36px;
-}
-
-.site-footer-socials a[aria-label='Email'] {
-  --footer-icon-size: 31px;
 }

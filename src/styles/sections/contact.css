@@ -51,8 +51,8 @@
   position: relative;
   align-self: center;
   justify-self: start;
-  width: 112px;
-  height: 112px;
+  width: 88px;
+  height: 88px;
   display: grid;
   place-items: center;
 }
@@ -61,8 +61,8 @@
   position: relative;
   z-index: 2;
   display: grid;
-  width: 96px;
-  height: 96px;
+  width: 72px;
+  height: 72px;
   place-items: center;
   gap: 4px;
   border: 1px solid rgba(255, 106, 0, 0.6);
@@ -94,8 +94,8 @@
 }
 
 .contact-menu summary svg {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   transition: transform 260ms ease;
 }
 
@@ -114,13 +114,13 @@
 .contact-menu-items a,
 .contact-menu-items button {
   --angle: 0deg;
-  --distance: 124px;
+  --distance: 158px;
   --return-angle: 0deg;
   position: absolute;
   z-index: 1;
   display: inline-flex;
-  width: 72px;
-  height: 72px;
+  width: 124px;
+  height: 124px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -149,8 +149,8 @@
 .contact-menu-items a img,
 .contact-menu-items button svg,
 .contact-menu-items button img {
-  width: 58px;
-  height: 58px;
+  width: 112px;
+  height: 112px;
   transition: transform 180ms ease, filter 180ms ease;
 }
 
@@ -187,15 +187,15 @@
 
 .contact-menu[open] .contact-menu-items a:nth-child(1),
 .contact-menu[open] .contact-menu-items button:nth-child(1) {
-  --angle: -72deg;
-  --return-angle: 72deg;
+  --angle: 58deg;
+  --return-angle: -58deg;
   transition-delay: 20ms;
 }
 
 .contact-menu[open] .contact-menu-items a:nth-child(2),
 .contact-menu[open] .contact-menu-items button:nth-child(2) {
-  --angle: 72deg;
-  --return-angle: -72deg;
+  --angle: 122deg;
+  --return-angle: -122deg;
   transition-delay: 70ms;
 }
 

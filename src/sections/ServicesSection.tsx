@@ -4,7 +4,7 @@ import { rotatingNeeds, services } from '../data/siteContent'
 export function ServicesSection() {
   return (
     <section className="services-section" id="servicos">
-      <h2 className="need-rotator" aria-label="Você precisa de um site, sistema, dashboard, app ou portal. Nós temos a solução.">
+      <h2 className="need-rotator" aria-label="Você precisa de um site, sistema, dashboard, app ou portal? Nós temos a solução.">
         <span className="need-line">Você precisa de um</span>
         <span className="need-dynamic">
           <strong>
@@ -14,7 +14,6 @@ export function ServicesSection() {
               ))}
             </span>
           </strong>
-          <span className="need-question">?</span>
         </span>
         <span className="need-line">Nós temos a solução.</span>
       </h2>

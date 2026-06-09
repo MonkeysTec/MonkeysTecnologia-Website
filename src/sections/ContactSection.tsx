@@ -35,23 +35,14 @@ export function ContactSection() {
           </span>
           <h2>Equipe para criar software sob medida.</h2>
           <p>
-            Somos uma empresa de desenvolvimento de software dedicada a simplificar o ciclo de vida de aplicações web,
-            mobile e baseadas em APIs. Nossa equipe de especialistas inclui desenvolvedores front-end e back-end,
-            engenheiros mobile, gerentes de produto, designers de produto, especialistas em UI/UX, scrum masters,
-            engenheiros de DevOps, analistas de dados e líderes técnicos, todos trabalhando juntos para entregar
-            soluções digitais personalizadas.
-          </p>
-          <p>
-            Dedicamos tempo para compreender verdadeiramente os desafios de nossos clientes, transformando-os em
-            resultados práticos, rápidos e eficazes. Com uma abordagem flexível e colaborativa, os clientes podem moldar
-            ativamente o foco do desenvolvimento a cada semana, seja alocando 100% da equipe para design em uma semana
-            e, na seguinte, 70% para back-end e 30% para front-end. Esse modelo garante transparência, adaptabilidade e
-            total alinhamento com as prioridades em constante evolução de cada cliente.
+            Desenvolvemos soluções digitais sob medida para web, mobile e APIs, unindo tecnologia, design e estratégia.
+            Nossa equipe multidisciplinar trabalha de forma colaborativa para transformar desafios em resultados, com
+            processos ágeis, transparentes e adaptáveis às necessidades de cada cliente.
           </p>
         </div>
         <details className="contact-menu">
           <summary aria-label="Abrir perfis da equipe">
-            <Plus size={34} strokeWidth={2.8} />
+            <Plus size={24} strokeWidth={2.4} />
           </summary>
           <div className="contact-menu-items">
             {founders.map((founder) => (

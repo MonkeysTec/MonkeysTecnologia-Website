@@ -31,7 +31,7 @@
 .need-rotator strong {
   position: relative;
   display: inline-block;
-  width: 9.5ch;
+  width: 10.8ch;
   height: 1.05em;
   overflow: hidden;
   vertical-align: bottom;
@@ -43,12 +43,6 @@
   position: absolute;
   inset: 0;
   display: block;
-}
-
-.need-question {
-  position: static;
-  margin-left: 0.18em;
-  color: var(--orange);
 }
 
 .need-word-track span {
