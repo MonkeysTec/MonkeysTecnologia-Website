@@ -468,6 +468,7 @@
   .founder-modal-photo {
     height: 260px;
     min-height: 0;
+    border-radius: 8px 8px 0 0;
   }
 
   .founder-modal-copy {
