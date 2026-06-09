@@ -485,7 +485,7 @@
   }
 
   .founder-signature img {
-    width: min(190px, 72%);
+    height: 82px;
   }
 }
 
