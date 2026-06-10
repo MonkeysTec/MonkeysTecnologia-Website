@@ -117,7 +117,7 @@
   }
 
   .contact-section {
-    margin-top: -64px;
+    margin-top: -40px;
   }
 
   .client-logo-showcase {
@@ -297,11 +297,11 @@
   }
 
   .services-section {
-    padding: 64px 0 52px;
+    padding: 76px 0 66px;
   }
 
   .pain-section {
-    padding: 58px 0 0;
+    padding: 72px 0 0;
   }
 
   .section-heading {
@@ -353,7 +353,7 @@
   }
 
   .entry-section {
-    padding: 0 0 62px;
+    padding: 18px 0 76px;
   }
 
   .process-section {
@@ -364,8 +364,8 @@
   .clients-section {
     min-height: auto;
     margin-inline: auto;
-    margin-bottom: -34px;
-    padding: 20px 0 0;
+    margin-bottom: -18px;
+    padding: 34px 0 0;
   }
 
   .client-logo-showcase {
@@ -393,7 +393,7 @@
   .contact-section {
     width: min(100% - 36px, 402px);
     max-width: 402px;
-    margin-top: -28px;
+    margin-top: 8px;
     margin-bottom: calc(20px + env(safe-area-inset-bottom));
     padding: 20px;
   }

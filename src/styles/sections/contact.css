@@ -3,7 +3,7 @@
   grid-template-columns: minmax(0, 1fr) minmax(180px, 260px);
   align-items: center;
   gap: clamp(28px, 5vw, 72px);
-  margin-top: -112px;
+  margin-top: -72px;
   margin-bottom: 18px;
   padding: 38px;
   border: 1px solid rgba(255, 106, 0, 0.32);
