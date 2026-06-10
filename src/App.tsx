@@ -5,7 +5,6 @@ import { Header } from './sections/Header'
 import { HeroSection } from './sections/HeroSection'
 import { HighlightsStrip } from './sections/HighlightsStrip'
 import { PainSection } from './sections/PainSection'
-import { ProcessSection } from './sections/ProcessSection'
 import { ServicesSection } from './sections/ServicesSection'
 import { useRevealOnScroll } from './hooks/useRevealOnScroll'
 import { contactOptions } from './data/siteContent'
@@ -22,7 +21,6 @@ function App() {
       <PainSection />
       <ServicesSection />
       <EntrySection />
-      <ProcessSection />
       <ClientsSection />
       <ContactSection />
       <footer className="site-footer">

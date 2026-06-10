@@ -7,7 +7,6 @@ const navItems = [
   { href: '#antes-solucao', label: 'Antes da Solução' },
   { href: '#servicos', label: 'Serviços' },
   { href: '#caminhos', label: 'Caminhos' },
-  { href: '#processo', label: 'Processo' },
   { href: '#clientes', label: 'Clientes' },
   { href: '#sobre-nos', label: 'Sobre nós' },
 ]

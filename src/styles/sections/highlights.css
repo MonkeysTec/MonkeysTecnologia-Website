@@ -19,6 +19,10 @@
   transform: translateX(-50%);
 }
 
+.highlight-strip {
+  border-inline: 1px solid rgba(255, 106, 0, 0.2);
+}
+
 .highlight-strip::before {
   top: 0;
 }
