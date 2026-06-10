@@ -42,10 +42,25 @@
 .site-footer {
   width: min(1120px, calc(100% - 80px));
   margin: 0 auto;
-  padding: 18px 0 0;
+  padding: 34px 0 46px;
   color: var(--muted);
   font-size: 0.86rem;
   text-align: center;
+  isolation: isolate;
+}
+
+.site-footer::before {
+  position: absolute;
+  inset: 0 50%;
+  z-index: -1;
+  width: 100vw;
+  pointer-events: none;
+  content: '';
+  background:
+    linear-gradient(180deg, rgba(5, 5, 5, 0.88), rgba(5, 5, 5, 0.72) 45%, rgba(5, 5, 5, 0.9)),
+    url('../assets/fundo 2.png') center / cover;
+  opacity: 0.76;
+  transform: translateX(-50%);
 }
 
 .site-footer p {
@@ -56,7 +71,7 @@
   display: flex;
   justify-content: center;
   gap: 14px;
-  margin-top: 14px;
+  margin-top: 22px;
 }
 
 .site-footer-socials a {

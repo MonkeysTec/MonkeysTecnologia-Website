@@ -400,13 +400,15 @@
 
 .client-feature-screen--left {
   left: calc(3.9% + var(--client-map-offset));
-  --feature-logo-depth-direction: -1;
+  --feature-logo-depth-direction: -1.45;
+  --feature-logo-x: -9%;
   transform: perspective(1080px) rotateY(-8deg) rotateX(0.8deg) rotateZ(1.2deg) skewX(0.5deg);
 }
 
 .client-feature-screen--right {
   left: calc(69.4% + var(--client-map-offset));
   --feature-logo-depth-direction: 0.8;
+  --feature-logo-x: 0%;
   transform: perspective(1080px) rotateY(7deg) rotateX(0.8deg) rotateZ(-0.8deg) skewX(-0.4deg);
 }
 
@@ -426,6 +428,7 @@
   --feature-logo-height: calc(48% + 18px);
   --feature-logo-width: min(calc(56% + 28px), 178px);
   --feature-logo-y: 45%;
+  --feature-logo-x: 0%;
   --feature-logo-tilt: 0deg;
   --feature-logo-depth: 11deg;
   position: absolute;
@@ -441,8 +444,8 @@
     contrast(1.04)
     drop-shadow(0 14px 22px rgba(0, 0, 0, 0.58))
     drop-shadow(0 0 18px rgba(255, 106, 0, 0.24));
-  transform: translateY(14px) perspective(520px) rotateY(calc(var(--feature-logo-depth) * var(--feature-logo-depth-direction))) scale(0.76) rotate(var(--feature-logo-tilt));
-  transform-origin: center;
+  transform: translate(var(--feature-logo-x), 14px) perspective(520px) rotateY(calc(var(--feature-logo-depth) * var(--feature-logo-depth-direction))) scale(0.76) rotate(var(--feature-logo-tilt));
+  transform-origin: 46% center;
   transition:
     opacity 360ms ease,
     transform 560ms ease;
@@ -498,18 +501,18 @@
   0%,
   100% {
     opacity: 0;
-    transform: translateY(14px) perspective(520px) rotateY(calc(var(--feature-logo-depth) * var(--feature-logo-depth-direction))) scale(0.76) rotate(var(--feature-logo-tilt));
+    transform: translate(var(--feature-logo-x), 14px) perspective(520px) rotateY(calc(var(--feature-logo-depth) * var(--feature-logo-depth-direction))) scale(0.76) rotate(var(--feature-logo-tilt));
   }
 
   1.4%,
   7.1% {
     opacity: 1;
-    transform: translateY(14px) perspective(520px) rotateY(calc(var(--feature-logo-depth) * var(--feature-logo-depth-direction))) scale(1) rotate(var(--feature-logo-tilt));
+    transform: translate(var(--feature-logo-x), 14px) perspective(520px) rotateY(calc(var(--feature-logo-depth) * var(--feature-logo-depth-direction))) scale(1) rotate(var(--feature-logo-tilt));
   }
 
   8.1% {
     opacity: 0;
-    transform: translateY(14px) perspective(520px) rotateY(calc(var(--feature-logo-depth) * var(--feature-logo-depth-direction))) scale(0.86) rotate(var(--feature-logo-tilt));
+    transform: translate(var(--feature-logo-x), 14px) perspective(520px) rotateY(calc(var(--feature-logo-depth) * var(--feature-logo-depth-direction))) scale(0.86) rotate(var(--feature-logo-tilt));
   }
 }
 
@@ -578,11 +581,15 @@
 
   .client-feature-screen--left {
     left: calc(4.1% + var(--client-map-offset));
+    --feature-logo-depth-direction: -1.25;
+    --feature-logo-x: -6%;
     transform: perspective(580px) rotateY(-7deg) rotateX(0.7deg) rotateZ(1deg) skewX(0.4deg);
   }
 
   .client-feature-screen--right {
     left: calc(69.6% + var(--client-map-offset));
+    --feature-logo-depth-direction: 0.8;
+    --feature-logo-x: 0%;
     transform: perspective(580px) rotateY(6deg) rotateX(0.7deg) rotateZ(-0.7deg) skewX(-0.35deg);
   }
 
