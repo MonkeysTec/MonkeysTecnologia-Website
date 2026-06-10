@@ -26,10 +26,12 @@
 }
 
 .client-logo-showcase {
+  --client-map-offset: 6%;
+  --client-scene-scale: 1;
+
   position: relative;
-  left: calc(4.25% - 39px);
   display: flex;
-  width: min(1260px, calc(100vw - 40px));
+  width: min(1260px, calc(100% - 40px));
   margin-inline: auto;
   aspect-ratio: 16 / 9;
   height: auto;
@@ -96,7 +98,7 @@
 .client-constellation-scene {
   opacity: 0.58;
   filter: saturate(1.06) contrast(1.06);
-  transform: scale(3.5);
+  transform: translateX(var(--client-map-offset)) scale(var(--client-scene-scale));
   mask-image:
     linear-gradient(90deg, transparent 0%, #000 18%, #000 92%, transparent 100%),
     linear-gradient(180deg, transparent 0%, #000 8%, #000 68%, transparent 100%);
@@ -169,7 +171,7 @@
   --logo-y: calc(-100% - 20px);
   position: absolute;
   top: var(--star-top);
-  left: var(--star-left);
+  left: calc(var(--star-left) + var(--client-map-offset));
   z-index: 1;
   width: var(--star-size);
   height: var(--star-size);
@@ -397,13 +399,13 @@
 }
 
 .client-feature-screen--left {
-  left: 3.9%;
+  left: calc(3.9% + var(--client-map-offset));
   --feature-logo-depth-direction: -1;
   transform: perspective(1080px) rotateY(-8deg) rotateX(0.8deg) rotateZ(1.2deg) skewX(0.5deg);
 }
 
 .client-feature-screen--right {
-  left: 69.4%;
+  left: calc(69.4% + var(--client-map-offset));
   --feature-logo-depth-direction: 0.8;
   transform: perspective(1080px) rotateY(7deg) rotateX(0.8deg) rotateZ(-0.8deg) skewX(-0.4deg);
 }
@@ -561,6 +563,10 @@
 }
 
 @media (max-width: 640px) {
+  .client-logo-showcase {
+    --client-map-offset: 3%;
+  }
+
   .client-feature-screen {
     top: 19.7%;
     width: 20.8%;
@@ -571,12 +577,12 @@
   }
 
   .client-feature-screen--left {
-    left: 4.1%;
+    left: calc(4.1% + var(--client-map-offset));
     transform: perspective(580px) rotateY(-7deg) rotateX(0.7deg) rotateZ(1deg) skewX(0.4deg);
   }
 
   .client-feature-screen--right {
-    left: 69.6%;
+    left: calc(69.6% + var(--client-map-offset));
     transform: perspective(580px) rotateY(6deg) rotateX(0.7deg) rotateZ(-0.7deg) skewX(-0.35deg);
   }
 

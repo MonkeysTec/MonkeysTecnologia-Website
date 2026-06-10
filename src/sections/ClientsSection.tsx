@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react'
 import { clientLogos } from '../data/siteContent'
 
-const monkeyConstellation = new URL('../assets/monkey-semfundo.png', import.meta.url).href
+const monkeyConstellation = new URL('../assets/monkey-semfundo2.png', import.meta.url).href
 const logoStepDuration = 1600
 
 export function ClientsSection() {

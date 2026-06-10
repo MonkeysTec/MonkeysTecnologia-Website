@@ -1,14 +1,9 @@
 import { ArrowRight, Sparkles } from 'lucide-react'
 import { createWhatsAppLink, heroRotatingWords } from '../data/siteContent'
-import heroImage from '../assets/monkeys-hero2.png'
 
 export function HeroSection() {
   return (
     <section className="hero-section" id="inicio">
-      <div className="hero-media" aria-hidden="true">
-        <img src={heroImage} alt="" />
-      </div>
-
       <div className="hero-content">
         <span className="eyebrow">
           <Sparkles size={18} />

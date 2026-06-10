@@ -7,44 +7,36 @@
   min-height: calc(100svh - 78px);
   margin: 0 auto;
   padding: 46px 0 58px;
-  overflow: hidden;
+  isolation: isolate;
 }
 
-.hero-media {
+.hero-section::before {
   position: absolute;
   inset-block: 10px 20px;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  overflow: hidden;
+  left: 50%;
+  z-index: -2;
+  width: 100vw;
+  content: '';
+  background-image: url('../../assets/monkeys-hero.png');
+  background-position: center;
+  background-size: cover;
+  opacity: 0.96;
+  filter: saturate(1.12) contrast(1.04);
+  transform: translateX(-50%);
 }
 
-.hero-media::before {
+.hero-section::after {
   position: absolute;
-  inset: 0;
-  z-index: 1;
+  inset-block: 10px 20px;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
   content: '';
   background:
     linear-gradient(90deg, rgba(5, 5, 5, 0.5) 0%, rgba(5, 5, 5, 0.34) 32%, rgba(5, 5, 5, 0.08) 68%),
-    linear-gradient(180deg, rgba(5, 5, 5, 0.08), rgba(5, 5, 5, 0.72));
-}
-
-.hero-media::after {
-  position: absolute;
-  inset: auto 0 0;
-  z-index: 1;
-  height: 34%;
-  content: '';
-  background: linear-gradient(180deg, transparent, #050505 82%);
-}
-
-.hero-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  opacity: 0.96;
-  filter: saturate(1.12) contrast(1.04);
+    linear-gradient(180deg, rgba(5, 5, 5, 0.08), rgba(5, 5, 5, 0.72)),
+    linear-gradient(180deg, transparent 66%, #050505 96%);
+  transform: translateX(-50%);
 }
 
 .hero-content {
