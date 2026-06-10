@@ -3,9 +3,28 @@
   grid-template-columns: repeat(4, 1fr);
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
-  border-block: 1px solid rgba(255, 106, 0, 0.24);
   background: rgba(7, 7, 7, 0.72);
   backdrop-filter: blur(14px);
+}
+
+.highlight-strip::before,
+.highlight-strip::after {
+  position: absolute;
+  left: 50%;
+  width: 100vw;
+  height: 1px;
+  pointer-events: none;
+  content: '';
+  background: rgba(255, 106, 0, 0.24);
+  transform: translateX(-50%);
+}
+
+.highlight-strip::before {
+  top: 0;
+}
+
+.highlight-strip::after {
+  bottom: 0;
 }
 
 .highlight-item {

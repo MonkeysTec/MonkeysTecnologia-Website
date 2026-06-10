@@ -401,7 +401,9 @@
 .client-feature-screen--left {
   left: calc(3.9% + var(--client-map-offset));
   --feature-logo-depth-direction: -1.45;
-  --feature-logo-x: -9%;
+  --feature-logo-x: -38%;
+  --feature-logo-nudge-x: 0px;
+  clip-path: polygon(-28% 0, 100% 10%, 99% 93%, -28% 100%);
   transform: perspective(1080px) rotateY(-8deg) rotateX(0.8deg) rotateZ(1.2deg) skewX(0.5deg);
 }
 
@@ -409,6 +411,7 @@
   left: calc(69.4% + var(--client-map-offset));
   --feature-logo-depth-direction: 0.8;
   --feature-logo-x: 0%;
+  --feature-logo-nudge-x: 0px;
   transform: perspective(1080px) rotateY(7deg) rotateX(0.8deg) rotateZ(-0.8deg) skewX(-0.4deg);
 }
 
@@ -428,9 +431,10 @@
   --feature-logo-height: calc(48% + 18px);
   --feature-logo-width: min(calc(56% + 28px), 178px);
   --feature-logo-y: 45%;
-  --feature-logo-x: 0%;
   --feature-logo-tilt: 0deg;
   --feature-logo-depth: 11deg;
+  --feature-logo-scale: 1.1;
+  --feature-logo-y-offset: 14px;
   position: absolute;
   z-index: 2;
   width: var(--feature-logo-width);
@@ -444,7 +448,7 @@
     contrast(1.04)
     drop-shadow(0 14px 22px rgba(0, 0, 0, 0.58))
     drop-shadow(0 0 18px rgba(255, 106, 0, 0.24));
-  transform: translate(var(--feature-logo-x), 14px) perspective(520px) rotateY(calc(var(--feature-logo-depth) * var(--feature-logo-depth-direction))) scale(0.76) rotate(var(--feature-logo-tilt));
+  transform: translate(calc(var(--feature-logo-x) + var(--feature-logo-nudge-x)), var(--feature-logo-y-offset)) scale(calc(0.76 * var(--feature-logo-scale))) rotate(var(--feature-logo-tilt));
   transform-origin: 46% center;
   transition:
     opacity 360ms ease,
@@ -501,18 +505,18 @@
   0%,
   100% {
     opacity: 0;
-    transform: translate(var(--feature-logo-x), 14px) perspective(520px) rotateY(calc(var(--feature-logo-depth) * var(--feature-logo-depth-direction))) scale(0.76) rotate(var(--feature-logo-tilt));
+    transform: translate(calc(var(--feature-logo-x) + var(--feature-logo-nudge-x)), var(--feature-logo-y-offset)) scale(calc(0.76 * var(--feature-logo-scale))) rotate(var(--feature-logo-tilt));
   }
 
   1.4%,
   7.1% {
     opacity: 1;
-    transform: translate(var(--feature-logo-x), 14px) perspective(520px) rotateY(calc(var(--feature-logo-depth) * var(--feature-logo-depth-direction))) scale(1) rotate(var(--feature-logo-tilt));
+    transform: translate(calc(var(--feature-logo-x) + var(--feature-logo-nudge-x)), var(--feature-logo-y-offset)) scale(var(--feature-logo-scale)) rotate(var(--feature-logo-tilt));
   }
 
   8.1% {
     opacity: 0;
-    transform: translate(var(--feature-logo-x), 14px) perspective(520px) rotateY(calc(var(--feature-logo-depth) * var(--feature-logo-depth-direction))) scale(0.86) rotate(var(--feature-logo-tilt));
+    transform: translate(calc(var(--feature-logo-x) + var(--feature-logo-nudge-x)), var(--feature-logo-y-offset)) scale(calc(0.86 * var(--feature-logo-scale))) rotate(var(--feature-logo-tilt));
   }
 }
 
@@ -574,7 +578,7 @@
     top: 19.7%;
     width: 20.8%;
     height: 32.6%;
-    clip-path: polygon(1.5% 0, 100% 10%, 99% 93%, 0 100%);
+    clip-path: polygon(-36% -20%, 136% -10%, 136% 113%, -36% 120%);
     filter: none;
     box-shadow: none;
   }
@@ -582,7 +586,9 @@
   .client-feature-screen--left {
     left: calc(4.1% + var(--client-map-offset));
     --feature-logo-depth-direction: -1.25;
-    --feature-logo-x: -6%;
+    --feature-logo-x: -24%;
+    --feature-logo-nudge-x: 0px;
+    clip-path: polygon(-58% -20%, 136% -10%, 136% 113%, -58% 120%);
     transform: perspective(580px) rotateY(-7deg) rotateX(0.7deg) rotateZ(1deg) skewX(0.4deg);
   }
 
@@ -590,6 +596,7 @@
     left: calc(69.6% + var(--client-map-offset));
     --feature-logo-depth-direction: 0.8;
     --feature-logo-x: 0%;
+    --feature-logo-nudge-x: 0px;
     transform: perspective(580px) rotateY(6deg) rotateX(0.7deg) rotateZ(-0.7deg) skewX(-0.35deg);
   }
 
@@ -599,6 +606,8 @@
   }
 
   .client-feature-logo {
+    --feature-logo-scale: 1.045;
+    --feature-logo-y-offset: 4px;
     --feature-logo-height: calc(50% + 10px);
     --feature-logo-width: calc(60% + 10px);
     --feature-logo-y: 45%;
